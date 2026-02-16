@@ -384,6 +384,19 @@ export const translations = {
     footer: {
       rights: 'Informatīvs portāls kravu pārvadātājiem',
       disclaimer: 'Dati ir uzziņas rakstura'
+    },
+    features: {
+      title: 'Noderīga informācija',
+      vignettes: { title: 'Vinjetes', desc: 'Tarifi un kur iegādāties' },
+      parking: { title: 'Stāvvietas', desc: 'Apsargātas autostāvvietas' },
+      weights: { title: 'Gabarīti', desc: 'Svara ierobežojumi' },
+      rest: { title: 'Atpūtas režīms', desc: 'ES prasības' }
+    },
+    emergency: {
+      title: 'Ārkārtas palīdzība',
+      subtitle: 'Diennakts',
+      services: 'Ārkārtas',
+      police: 'Policija'
     }
   },
   en: {
