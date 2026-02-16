@@ -215,24 +215,119 @@ export const Layout = ({ children }) => {
         </AnimatePresence>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-[#2D4F1E] text-white py-12 mt-24">
+      {/* Pre-Footer CTA */}
+      <section className="bg-[#2D4F1E] py-12 mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-[#EBA937] rounded-full flex items-center justify-center">
-                <Truck className="w-7 h-7 text-[#2D4F1E]" />
+            <div>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">
+                {language === 'ru' ? 'Важная информация!' : language === 'lv' ? 'Svarīga informācija!' : 'Important Information!'}
+              </h2>
+              <p className="text-white/80 max-w-xl">
+                {language === 'ru' 
+                  ? 'Перед рейсом убедитесь, что у вас есть действующая виньетка. Штраф за отсутствие - до 700 EUR.' 
+                  : language === 'lv' 
+                  ? 'Pirms reisa pārliecinieties, ka jums ir derīga vinjete. Sods par tās neesamību - līdz 700 EUR.'
+                  : 'Before your trip, make sure you have a valid vignette. Fine for not having one - up to 700 EUR.'}
+              </p>
+            </div>
+            <Link to="/vignettes">
+              <Button className="bg-white text-[#2D4F1E] hover:bg-white/90 rounded-full px-8 py-4 font-semibold whitespace-nowrap">
+                {language === 'ru' ? 'Узнать о виньетках' : language === 'lv' ? 'Uzzināt par vinjetēm' : 'Learn about vignettes'}
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[#1a3010] text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {/* Logo & Description */}
+            <div className="lg:col-span-1">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-[#EBA937] rounded-lg flex items-center justify-center">
+                  <Truck className="w-6 h-6 text-[#2D4F1E]" />
+                </div>
+                <div>
+                  <h3 className="font-display font-bold text-lg">{getSiteName()}</h3>
+                  <p className="text-white/60 text-xs uppercase tracking-wider">
+                    {language === 'ru' ? 'Информационный портал' : language === 'lv' ? 'Informatīvs portāls' : 'Information portal'}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-display font-bold text-lg">
-                  {getSiteName()}
-                </h3>
-                <p className="text-white/70 text-sm">{t.footer.rights}</p>
+              <p className="text-white/70 text-sm mb-6">
+                {language === 'ru' 
+                  ? 'Полная информация о грузоперевозках через Латвию. Виньетки, маршруты, стоянки и правила для водителей грузовиков.'
+                  : language === 'lv'
+                  ? 'Pilnīga informācija par kravu pārvadājumiem caur Latviju. Vinjetes, maršruti, stāvvietas un noteikumi kravas auto vadītājiem.'
+                  : 'Complete information about trucking through Latvia. Vignettes, routes, parking and regulations for truck drivers.'}
+              </p>
+              <div className="space-y-2 text-sm text-white/60">
+                <p className="flex items-center gap-2">
+                  <Globe className="w-4 h-4" />
+                  {language === 'ru' ? 'Информационный ресурс' : language === 'lv' ? 'Informatīvs resurss' : 'Information resource'}
+                </p>
+                <p className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  {language === 'ru' ? 'Обновлено: 2025' : language === 'lv' ? 'Atjaunināts: 2025' : 'Updated: 2025'}
+                </p>
               </div>
             </div>
-            <p className="text-white/60 text-sm text-center md:text-right">
-              {t.footer.disclaimer}
+
+            {/* Navigation Column 1 */}
+            <div>
+              <h4 className="font-display font-semibold text-white mb-4 uppercase text-sm tracking-wider">
+                {language === 'ru' ? 'Информация' : language === 'lv' ? 'Informācija' : 'Information'}
+              </h4>
+              <ul className="space-y-3">
+                <li><Link to="/vignettes" className="text-white/70 hover:text-white transition-colors text-sm">{t.nav.vignettes}</Link></li>
+                <li><Link to="/routes" className="text-white/70 hover:text-white transition-colors text-sm">{t.nav.routes}</Link></li>
+                <li><Link to="/tolls" className="text-white/70 hover:text-white transition-colors text-sm">{t.nav.tolls}</Link></li>
+                <li><Link to="/borders" className="text-white/70 hover:text-white transition-colors text-sm">{t.nav.borders}</Link></li>
+              </ul>
+            </div>
+
+            {/* Navigation Column 2 */}
+            <div>
+              <h4 className="font-display font-semibold text-white mb-4 uppercase text-sm tracking-wider">
+                {language === 'ru' ? 'Правила' : language === 'lv' ? 'Noteikumi' : 'Regulations'}
+              </h4>
+              <ul className="space-y-3">
+                <li><Link to="/rules" className="text-white/70 hover:text-white transition-colors text-sm">{t.nav.rules}</Link></li>
+                <li><Link to="/weights" className="text-white/70 hover:text-white transition-colors text-sm">{t.nav.weights}</Link></li>
+                <li><Link to="/rest" className="text-white/70 hover:text-white transition-colors text-sm">{t.nav.rest}</Link></li>
+                <li><Link to="/weather" className="text-white/70 hover:text-white transition-colors text-sm">{t.nav.weather}</Link></li>
+              </ul>
+            </div>
+
+            {/* Navigation Column 3 */}
+            <div>
+              <h4 className="font-display font-semibold text-white mb-4 uppercase text-sm tracking-wider">
+                {language === 'ru' ? 'Сервис' : language === 'lv' ? 'Serviss' : 'Services'}
+              </h4>
+              <ul className="space-y-3">
+                <li><Link to="/parking" className="text-white/70 hover:text-white transition-colors text-sm">{t.nav.parking}</Link></li>
+                <li><Link to="/fuel" className="text-white/70 hover:text-white transition-colors text-sm">{t.nav.fuel}</Link></li>
+                <li><Link to="/services" className="text-white/70 hover:text-white transition-colors text-sm">{t.nav.services}</Link></li>
+                <li><Link to="/contacts" className="text-white/70 hover:text-white transition-colors text-sm">{t.nav.contacts}</Link></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-white/50 text-sm">
+              © 2025 {getSiteName()}. {language === 'ru' ? 'Информационный ресурс.' : language === 'lv' ? 'Informatīvs resurss.' : 'Information resource.'}
             </p>
+            <div className="flex items-center gap-6 text-sm">
+              <Link to="/about" className="text-white/50 hover:text-white transition-colors">{t.nav.about}</Link>
+              <Link to="/contacts" className="text-white/50 hover:text-white transition-colors">{t.nav.contacts}</Link>
+            </div>
+          </div>
+        </div>
+      </footer>
           </div>
         </div>
       </footer>
