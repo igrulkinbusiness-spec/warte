@@ -184,6 +184,19 @@ export const translations = {
     footer: {
       rights: 'Информационный портал для грузоперевозчиков',
       disclaimer: 'Данные носят справочный характер'
+    },
+    features: {
+      title: 'Полезная информация',
+      vignettes: { title: 'Виньетки', desc: 'Тарифы и где купить' },
+      parking: { title: 'Стоянки', desc: 'Охраняемые паркинги' },
+      weights: { title: 'Габариты', desc: 'Весовые ограничения' },
+      rest: { title: 'Режим отдыха', desc: 'Требования ЕС' }
+    },
+    emergency: {
+      title: 'Экстренная помощь',
+      subtitle: 'Круглосуточно',
+      services: 'Экстренные',
+      police: 'Полиция'
     }
   },
   lv: {
