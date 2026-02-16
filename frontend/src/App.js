@@ -42,6 +42,8 @@ function App() {
             <Route path="/weather" element={<WeatherPage />} />
             <Route path="/contacts" element={<ContactsPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
           </Routes>
         </Layout>
       </BrowserRouter>
