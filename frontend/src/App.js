@@ -4,19 +4,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { Layout } from "./components/Layout";
 import { HomePage } from "./pages/HomePage";
-import { HistoryPage } from "./pages/HistoryPage";
-import { HighwaysPage } from "./pages/HighwaysPage";
-import { RegionalPage } from "./pages/RegionalPage";
-import { LocalPage } from "./pages/LocalPage";
+import { VignettesPage } from "./pages/VignettesPage";
+import { RoutesPage } from "./pages/RoutesPage";
+import { ParkingPage } from "./pages/ParkingPage";
 import { RulesPage } from "./pages/RulesPage";
 import { MapPage } from "./pages/MapPage";
-import { AttractionsPage } from "./pages/AttractionsPage";
-import { SafetyPage } from "./pages/SafetyPage";
-import { StatisticsPage } from "./pages/StatisticsPage";
-import { WinterPage } from "./pages/WinterPage";
-import { CyclingPage } from "./pages/CyclingPage";
-import { HistoricPage } from "./pages/HistoricPage";
-import { BridgesPage } from "./pages/BridgesPage";
+import { TollsPage } from "./pages/TollsPage";
+import { BordersPage } from "./pages/BordersPage";
+import { FuelPage } from "./pages/FuelPage";
+import { WeightsPage } from "./pages/WeightsPage";
+import { RestPage } from "./pages/RestPage";
+import { ServicesPage } from "./pages/ServicesPage";
+import { WeatherPage } from "./pages/WeatherPage";
+import { ContactsPage } from "./pages/ContactsPage";
 import { AboutPage } from "./pages/AboutPage";
 
 function App() {
@@ -26,19 +26,19 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/history" element={<HistoryPage />} />
-            <Route path="/highways" element={<HighwaysPage />} />
-            <Route path="/regional" element={<RegionalPage />} />
-            <Route path="/local" element={<LocalPage />} />
+            <Route path="/vignettes" element={<VignettesPage />} />
+            <Route path="/routes" element={<RoutesPage />} />
+            <Route path="/parking" element={<ParkingPage />} />
             <Route path="/rules" element={<RulesPage />} />
             <Route path="/map" element={<MapPage />} />
-            <Route path="/attractions" element={<AttractionsPage />} />
-            <Route path="/safety" element={<SafetyPage />} />
-            <Route path="/statistics" element={<StatisticsPage />} />
-            <Route path="/winter" element={<WinterPage />} />
-            <Route path="/cycling" element={<CyclingPage />} />
-            <Route path="/historic" element={<HistoricPage />} />
-            <Route path="/bridges" element={<BridgesPage />} />
+            <Route path="/tolls" element={<TollsPage />} />
+            <Route path="/borders" element={<BordersPage />} />
+            <Route path="/fuel" element={<FuelPage />} />
+            <Route path="/weights" element={<WeightsPage />} />
+            <Route path="/rest" element={<RestPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/weather" element={<WeatherPage />} />
+            <Route path="/contacts" element={<ContactsPage />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>
         </Layout>

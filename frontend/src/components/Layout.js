@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Home, History, Car, MapPin, Route, BookOpen, Map, Camera, 
-  Shield, BarChart3, Snowflake, Bike, Compass, Building2, Info,
+  Home, Truck, CreditCard, Route, ParkingCircle, Shield, Map,
+  MapPin, Fuel, Scale, Clock, Wrench, CloudSnow, Phone, Info,
   Menu, X, Globe, ChevronDown
 } from 'lucide-react';
 import {
@@ -17,26 +17,26 @@ import { Button } from './ui/button';
 
 const navItems = [
   { path: '/', icon: Home, key: 'home' },
-  { path: '/history', icon: History, key: 'history' },
-  { path: '/highways', icon: Car, key: 'highways' },
-  { path: '/regional', icon: Route, key: 'regional' },
-  { path: '/local', icon: MapPin, key: 'local' },
-  { path: '/rules', icon: BookOpen, key: 'rules' },
+  { path: '/vignettes', icon: CreditCard, key: 'vignettes' },
+  { path: '/routes', icon: Route, key: 'routes' },
+  { path: '/parking', icon: ParkingCircle, key: 'parking' },
+  { path: '/rules', icon: Shield, key: 'rules' },
   { path: '/map', icon: Map, key: 'map' },
-  { path: '/attractions', icon: Camera, key: 'attractions' },
-  { path: '/safety', icon: Shield, key: 'safety' },
-  { path: '/statistics', icon: BarChart3, key: 'statistics' },
-  { path: '/winter', icon: Snowflake, key: 'winter' },
-  { path: '/cycling', icon: Bike, key: 'cycling' },
-  { path: '/historic', icon: Compass, key: 'historic' },
-  { path: '/bridges', icon: Building2, key: 'bridges' },
+  { path: '/tolls', icon: CreditCard, key: 'tolls' },
+  { path: '/borders', icon: MapPin, key: 'borders' },
+  { path: '/fuel', icon: Fuel, key: 'fuel' },
+  { path: '/weights', icon: Scale, key: 'weights' },
+  { path: '/rest', icon: Clock, key: 'rest' },
+  { path: '/services', icon: Wrench, key: 'services' },
+  { path: '/weather', icon: CloudSnow, key: 'weather' },
+  { path: '/contacts', icon: Phone, key: 'contacts' },
   { path: '/about', icon: Info, key: 'about' },
 ];
 
 const languages = [
-  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
   { code: 'lv', name: 'Latviešu', flag: '🇱🇻' },
   { code: 'en', name: 'English', flag: '🇬🇧' },
+  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
 ];
 
 export const Layout = ({ children }) => {
@@ -45,6 +45,14 @@ export const Layout = ({ children }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const currentLang = languages.find(l => l.code === language);
+
+  const getSiteName = () => {
+    switch(language) {
+      case 'ru': return 'Грузоперевозки Латвия';
+      case 'lv': return 'Kravas Latvija';
+      default: return 'Trucking Latvia';
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#F9F9F7]">
@@ -55,10 +63,10 @@ export const Layout = ({ children }) => {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group" data-testid="logo-link">
               <div className="w-10 h-10 bg-[#EBA937] rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform">
-                <Route className="w-6 h-6 text-[#2D4F1E]" />
+                <Truck className="w-6 h-6 text-[#2D4F1E]" />
               </div>
               <span className="font-display text-xl font-bold text-white hidden sm:block">
-                {language === 'ru' ? 'Дороги Латвии' : language === 'lv' ? 'Latvijas Ceļi' : 'Roads of Latvia'}
+                {getSiteName()}
               </span>
             </Link>
 
@@ -213,11 +221,11 @@ export const Layout = ({ children }) => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-[#EBA937] rounded-full flex items-center justify-center">
-                <Route className="w-7 h-7 text-[#2D4F1E]" />
+                <Truck className="w-7 h-7 text-[#2D4F1E]" />
               </div>
               <div>
                 <h3 className="font-display font-bold text-lg">
-                  {language === 'ru' ? 'Дороги Латвии' : language === 'lv' ? 'Latvijas Ceļi' : 'Roads of Latvia'}
+                  {getSiteName()}
                 </h3>
                 <p className="text-white/70 text-sm">{t.footer.rights}</p>
               </div>
