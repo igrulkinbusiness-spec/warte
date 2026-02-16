@@ -1,0 +1,151 @@
+{
+  "identity": {
+    "name": "The Baltic Prism",
+    "tone": "Scenic, Informative, Organic, Vibrant",
+    "description": "A design system that mirrors the Latvian landscape—shifting from deep pine forests to golden amber shores. It avoids the 'corporate tourism' look by using editorial typography and immersive full-width photography.",
+    "theme_mode": "light",
+    "target_audience": "Tourists, Locals, Drivers, History Enthusiasts"
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "name": "Forest Deep",
+        "value": "#2D4F1E",
+        "usage": "Headings, Footer, Strong Borders"
+      },
+      "secondary": {
+        "name": "Amber Glow",
+        "value": "#EBA937",
+        "usage": "Highlights, Illustrations, Active States"
+      },
+      "accent": {
+        "name": "Latvian Carmine",
+        "value": "#9D2235",
+        "usage": "Primary Buttons, Call to Actions (Use Sparingly)"
+      },
+      "neutral": {
+        "name": "Mist White",
+        "value": "#F9F9F7",
+        "usage": "Page Background"
+      },
+      "surface": {
+        "name": "River Ice",
+        "value": "#FFFFFF",
+        "usage": "Cards, Modals"
+      },
+      "info": {
+        "name": "Baltic Blue",
+        "value": "#4A8C94",
+        "usage": "Links, Map Water Features"
+      }
+    },
+    "gradients": {
+      "hero_overlay": "linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(45,79,30,0.4) 100%)",
+      "amber_fade": "linear-gradient(90deg, #EBA937 0%, #F4C470 100%)"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "display": {
+        "family": "Syne, Unbounded, Space Grotesk, sans-serif",
+        "weight": "700",
+        "usage": "H1, H2, Hero Text"
+      },
+      "body": {
+        "family": "Manrope, Inter, sans-serif",
+        "weight": "400",
+        "usage": "Paragraphs, UI Text"
+      }
+    },
+    "scale": {
+      "h1": "text-5xl md:text-7xl tracking-tight font-bold",
+      "h2": "text-3xl md:text-5xl tracking-tight font-semibold",
+      "h3": "text-2xl md:text-3xl font-medium",
+      "body": "text-base md:text-lg leading-relaxed",
+      "caption": "text-sm text-muted-foreground uppercase tracking-widest"
+    }
+  },
+  "layout": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "spacing": {
+      "section_gap": "py-24",
+      "component_gap": "gap-8"
+    },
+    "grid_system": "grid grid-cols-1 md:grid-cols-12 gap-8",
+    "radius": "rounded-2xl"
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#9D2235] hover:bg-[#7D1B2A] text-white rounded-full px-8 py-3 font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5",
+      "secondary": "bg-white text-[#2D4F1E] border-2 border-[#2D4F1E] rounded-full px-8 py-3 font-semibold hover:bg-[#2D4F1E] hover:text-white transition-all"
+    },
+    "cards": {
+      "style": "bg-white/80 backdrop-blur-md border border-white/20 shadow-xl rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group",
+      "image_treatment": "h-64 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+    },
+    "map_container": "w-full h-[600px] rounded-3xl shadow-2xl border-4 border-white overflow-hidden relative"
+  },
+  "visual_enhancers": {
+    "textures": "Use subtle noise overlay on the 'Mist White' background to give it a paper-like feel.",
+    "motifs": "Use SVG lines that mimic topographical map lines or winding roads as section dividers.",
+    "shadows": "shadow-[0_8px_30px_rgb(0,0,0,0.08)]"
+  },
+  "image_urls": {
+    "hero": {
+      "url": "https://images.unsplash.com/photo-1554218507-cebb48b1a675",
+      "alt": "Winding road through Latvian forest from above",
+      "usage": "Homepage Hero Background"
+    },
+    "winter": {
+      "url": "https://images.unsplash.com/photo-1669576583073-4d1f6c596078",
+      "alt": "Snowy winter road in Latvia",
+      "usage": "Winter Roads Section"
+    },
+    "bridge": {
+      "url": "https://images.unsplash.com/photo-1647596088007-506c49881470",
+      "alt": "Riga bridge at sunset",
+      "usage": "Bridges Page / Engineering Section"
+    },
+    "gravel_road": {
+      "url": "https://images.unsplash.com/photo-1691061129344-1132de0f0da8",
+      "alt": "Countryside gravel road with green fields",
+      "usage": "Regional Roads / History Section"
+    },
+    "highway": {
+      "url": "https://images.unsplash.com/photo-1625547895189-c9323a5ea1a5",
+      "alt": "Modern asphalt highway A1",
+      "usage": "Main Highways Section"
+    },
+    "nature_safety": {
+      "url": "https://images.unsplash.com/photo-1768815021727-dbed2f7d6aed",
+      "alt": "Deer crossing road",
+      "usage": "Safety / Wildlife Section"
+    }
+  },
+  "tech_stack": {
+    "framework": "React (Create React App structure)",
+    "styling": "Tailwind CSS",
+    "ui_lib": "Shadcn/UI (Radix Primitives)",
+    "icons": "Lucide React",
+    "map": "Leaflet / React-Leaflet",
+    "animations": "Framer Motion"
+  },
+  "instructions_to_main_agent": [
+    "Use 'Unbounded' or 'Syne' font from Google Fonts for all headings to give a unique character.",
+    "Implement the 'Amber Glow' color for interactive states (hover, focus).",
+    "Ensure the 'Latvian Carmine' red is used ONLY for primary actions to maintain the 'calm nature' vibe.",
+    "The map component is critical. Use 'react-leaflet'. Style the map tiles to be clean (e.g., CartoDB Positron) if possible, or standard OSM.",
+    "For the 'Road History' page, use a vertical timeline layout connecting events with a dashed 'road line'.",
+    "All images must use the 'object-cover' class to ensure they fill their containers beautifully.",
+    "Use 'framer-motion' for page transitions—slide in from right to left like moving forward on a road.",
+    "Create a 'LanguageSwitcher' component that is prominent in the header (RU/LV/EN)."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Do not use generic gradients. Use the defined 'Forest Deep' and 'Amber Glow'.",
+    "Avoid 'Inter' for Headings. Use the Display font defined.",
+    "Every interactive element must have a hover state that lifts it or changes color.",
+    "Use generous padding (py-24) between sections.",
+    "Ensure text contrast meets WCAG AA standards, especially white text on images (use overlays).",
+    "All interactive elements MUST have `data-testid` attributes."
+  ]
+}

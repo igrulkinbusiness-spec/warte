@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "80:80"
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017
+      - DB_NAME=latvijas_celi
+      - CORS_ORIGINS=*
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+
+  mongodb:
+    image: mongo:6.0
+    volumes:
+      - mongodb_data:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongodb_data:
