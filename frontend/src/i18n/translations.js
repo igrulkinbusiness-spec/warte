@@ -584,6 +584,19 @@ export const translations = {
     footer: {
       rights: 'Information portal for freight carriers',
       disclaimer: 'Data is for reference purposes'
+    },
+    features: {
+      title: 'Useful Information',
+      vignettes: { title: 'Vignettes', desc: 'Prices and where to buy' },
+      parking: { title: 'Truck Stops', desc: 'Secured parking areas' },
+      weights: { title: 'Dimensions', desc: 'Weight restrictions' },
+      rest: { title: 'Rest Times', desc: 'EU requirements' }
+    },
+    emergency: {
+      title: 'Emergency Help',
+      subtitle: '24/7',
+      services: 'Emergency',
+      police: 'Police'
     }
   }
 };
