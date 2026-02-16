@@ -2,601 +2,562 @@ export const translations = {
   ru: {
     nav: {
       home: 'Главная',
-      history: 'История',
-      highways: 'Автомагистрали',
-      regional: 'Региональные',
-      local: 'Местные',
-      rules: 'ПДД',
+      vignettes: 'Виньетки',
+      routes: 'Маршруты',
+      parking: 'Стоянки',
+      rules: 'Правила',
       map: 'Карта',
-      attractions: 'Достопримечательности',
-      safety: 'Безопасность',
-      statistics: 'Статистика',
-      winter: 'Зимние дороги',
-      cycling: 'Велодорожки',
-      historic: 'Торговые пути',
-      bridges: 'Мосты',
-      about: 'О проекте'
+      tolls: 'Платные дороги',
+      borders: 'Границы',
+      fuel: 'АЗС',
+      weights: 'Габариты',
+      rest: 'Отдых',
+      services: 'Сервисы',
+      weather: 'Погода',
+      contacts: 'Контакты',
+      about: 'О нас'
     },
     home: {
-      title: 'Дороги Латвии',
-      subtitle: 'Откройте для себя дорожную сеть Балтии',
-      description: 'Информационный портал о дорогах, истории и инфраструктуре Латвии',
-      explore: 'Исследовать',
-      totalRoads: 'Всего дорог',
-      highways: 'Автомагистралей',
-      bridges: 'Мостов',
-      km: 'км'
+      title: 'Грузоперевозки Латвия',
+      subtitle: 'Всё для водителей грузовиков',
+      description: 'Виньетки, маршруты, стоянки, правила и полезная информация для дальнобойщиков',
+      explore: 'Подробнее',
+      totalRoads: 'Км дорог',
+      trucks: 'Стоянок',
+      borders: 'Погранпереходов',
+      km: ''
     },
-    history: {
-      title: 'История дорог Латвии',
-      subtitle: 'От древних торговых путей до современных магистралей',
-      timeline: [
-        { year: '1200', title: 'Ганзейские торговые пути', desc: 'Формирование первых торговых маршрутов через Ригу' },
-        { year: '1561', title: 'Ливонская конфедерация', desc: 'Развитие почтовых дорог между городами' },
-        { year: '1795', title: 'Российская империя', desc: 'Строительство государственных трактов' },
-        { year: '1918', title: 'Независимость', desc: 'Создание национальной дорожной сети' },
-        { year: '1940', title: 'Советский период', desc: 'Реконструкция и расширение дорог' },
-        { year: '1991', title: 'Восстановление независимости', desc: 'Модернизация по европейским стандартам' },
-        { year: '2004', title: 'Вступление в ЕС', desc: 'Масштабные инвестиции в инфраструктуру' }
+    vignettes: {
+      title: 'Виньетки Латвии',
+      subtitle: 'Электронная система оплаты дорог для грузовиков',
+      description: 'С 2024 года в Латвии действует система виньеток для грузовых автомобилей свыше 3.5 тонн',
+      prices: 'Тарифы',
+      priceList: [
+        { category: 'Грузовики 3.5-12 тонн', day: '8 EUR', week: '25 EUR', month: '55 EUR', year: '400 EUR' },
+        { category: 'Грузовики > 12 тонн (2 оси)', day: '12 EUR', week: '40 EUR', month: '85 EUR', year: '650 EUR' },
+        { category: 'Грузовики > 12 тонн (3+ оси)', day: '15 EUR', week: '50 EUR', month: '110 EUR', year: '850 EUR' }
+      ],
+      howToBuy: 'Как купить',
+      buySteps: [
+        'Онлайн на сайте latviasvinjete.lv',
+        'На заправках Circle K, Neste, Viada',
+        'На пограничных пунктах',
+        'Через мобильное приложение'
+      ],
+      important: 'Важно: виньетка обязательна на всех магистралях A-класса'
+    },
+    routes: {
+      title: 'Маршруты для грузовиков',
+      subtitle: 'Оптимальные пути через Латвию',
+      mainRoutes: [
+        { code: 'E67', name: 'Via Baltica', from: 'Литва', to: 'Эстония', length: '310 км', desc: 'Главный транзитный коридор' },
+        { code: 'E22', name: 'Рига - Москва', from: 'Рига', to: 'Граница РФ', length: '279 км', desc: 'Восточный коридор через Резекне' },
+        { code: 'A9', name: 'Рига - Лиепая', from: 'Рига', to: 'Лиепая', length: '207 км', desc: 'К порту Лиепая' },
+        { code: 'A10', name: 'Рига - Вентспилс', from: 'Рига', to: 'Вентспилс', length: '189 км', desc: 'К крупнейшему порту' }
       ]
     },
-    highways: {
-      title: 'Автомагистрали Латвии',
-      subtitle: 'Основные транспортные артерии страны',
-      roads: [
-        { code: 'A1', name: 'Рига - граница Литвы (Via Baltica)', length: '88 км', desc: 'Главная магистраль на юг' },
-        { code: 'A2', name: 'Рига - граница Эстонии', length: '175 км', desc: 'Путь в северную Балтику' },
-        { code: 'A3', name: 'Инчукалнс - Валмиера - граница Эстонии', length: '137 км', desc: 'Восточный маршрут в Эстонию' },
-        { code: 'A4', name: 'Рига - граница Литвы (Bauska)', length: '66 км', desc: 'Альтернативный путь на юг' },
-        { code: 'A5', name: 'Рижское шоссе - Саласпилс - Бабите', length: '29 км', desc: 'Южная объездная Риги' },
-        { code: 'A6', name: 'Рига - Даугавпилс - граница Беларуси', length: '279 км', desc: 'Восточный коридор' },
-        { code: 'A7', name: 'Рига - Бауска - граница Литвы', length: '90 км', desc: 'Via Baltica через Бауску' },
-        { code: 'A8', name: 'Рига - Елгава - граница Литвы', length: '68 км', desc: 'Западный маршрут в Литву' },
-        { code: 'A9', name: 'Рига - Лиепая', length: '207 км', desc: 'Путь к Балтийскому морю' },
-        { code: 'A10', name: 'Рига - Вентспилс', length: '189 км', desc: 'К крупнейшему порту' }
-      ]
-    },
-    regional: {
-      title: 'Региональные дороги',
-      subtitle: 'P-дороги соединяющие города и районы',
-      description: 'Региональные дороги (P-дороги) образуют сеть, связывающую районные центры и важные населённые пункты. Общая протяжённость составляет более 5 000 км.',
-      features: [
-        'Двухполосное движение',
-        'Асфальтовое покрытие',
-        'Ограничение скорости 90 км/ч',
-        'Соединение районных центров'
-      ]
-    },
-    local: {
-      title: 'Местные дороги',
-      subtitle: 'Сеть дорог местного значения',
-      description: 'Местные дороги обеспечивают доступ к населённым пунктам, сельскохозяйственным угодьям и объектам. Протяжённость превышает 14 000 км.',
-      types: [
-        { name: 'Дороги с твёрдым покрытием', percent: '45%' },
-        { name: 'Гравийные дороги', percent: '40%' },
-        { name: 'Грунтовые дороги', percent: '15%' }
+    parking: {
+      title: 'Стоянки для грузовиков',
+      subtitle: 'Безопасные места отдыха',
+      features: ['Охраняемая территория', 'Душ и туалет', 'Кафе/столовая', 'WiFi', 'Ремонт'],
+      parkingList: [
+        { name: 'TruckStop Riga', location: 'Рига, Краста', spaces: '120', services: 'Полный сервис', price: '15 EUR/ночь' },
+        { name: 'Baltic Truck Park', location: 'Саласпилс', spaces: '80', services: 'Охрана, душ', price: '12 EUR/ночь' },
+        { name: 'Via Baltica Park', location: 'Бауска', spaces: '60', services: 'Охрана, кафе', price: '10 EUR/ночь' },
+        { name: 'Ventspils Truck', location: 'Вентспилс', spaces: '45', services: 'Порт, охрана', price: '12 EUR/ночь' }
       ]
     },
     rules: {
-      title: 'Правила дорожного движения',
-      subtitle: 'Основные правила для водителей в Латвии',
+      title: 'Правила для грузовиков',
+      subtitle: 'ПДД и ограничения в Латвии',
       sections: [
-        { title: 'Скоростной режим', items: ['В населённых пунктах: 50 км/ч', 'За пределами населённых пунктов: 90 км/ч', 'На автомагистралях: 110-130 км/ч'] },
-        { title: 'Освещение', items: ['Ближний свет обязателен круглый год', 'Противотуманные фары в условиях тумана', 'Дневные ходовые огни разрешены'] },
-        { title: 'Ремни безопасности', items: ['Обязательны для всех пассажиров', 'Детские кресла до 150 см роста', 'Штраф за нарушение: до 80 EUR'] },
-        { title: 'Алкоголь', items: ['Допустимый уровень: 0.5 промилле', 'Для новичков: 0.2 промилле', 'Серьёзные штрафы за превышение'] }
+        { title: 'Скоростной режим', items: ['В населённых пунктах: 50 км/ч', 'Вне населённых пунктов: 80 км/ч', 'На автомагистралях: 90 км/ч (грузовики > 7.5т)'] },
+        { title: 'Габариты', items: ['Максимальная высота: 4.0 м', 'Максимальная ширина: 2.55 м', 'Максимальная длина: 16.5 м (автопоезд: 18.75 м)'] },
+        { title: 'Весовые ограничения', items: ['Максимальная масса: 40 тонн', 'Нагрузка на ось: до 11.5 тонн', 'Разрешения для негабарита в VSIA'] },
+        { title: 'Запреты движения', items: ['Воскресенье: 00:00-24:00 (> 7.5т)', 'Праздники: движение запрещено', 'Летом ограничения в жару'] }
       ]
     },
     map: {
-      title: 'Интерактивная карта',
-      subtitle: 'Дорожная сеть Латвии',
+      title: 'Карта для грузовиков',
+      subtitle: 'Маршруты, стоянки, АЗС',
       legend: {
-        highways: 'Автомагистрали',
-        regional: 'Региональные',
-        cities: 'Города'
+        highways: 'Магистрали',
+        parking: 'Стоянки',
+        fuel: 'АЗС'
       }
     },
-    attractions: {
-      title: 'Достопримечательности',
-      subtitle: 'Интересные места вдоль дорог Латвии',
-      places: [
-        { name: 'Сигулда', route: 'A2', desc: 'Швейцария Латвии, замки и пещеры' },
-        { name: 'Рундальский дворец', route: 'A7', desc: 'Барочный шедевр XVIII века' },
-        { name: 'Юрмала', route: 'A10', desc: 'Курортный город на берегу Балтики' },
-        { name: 'Кулдига', route: 'P108', desc: 'Самый широкий водопад Европы' },
-        { name: 'Цесис', route: 'A3', desc: 'Средневековый замок и старый город' },
-        { name: 'Лиепая', route: 'A9', desc: 'Город ветров на побережье' }
+    tolls: {
+      title: 'Платные дороги',
+      subtitle: 'Система оплаты в Латвии',
+      description: 'В Латвии нет классических платных дорог с шлагбаумами. Оплата осуществляется через систему виньеток.',
+      roads: [
+        { name: 'A1 Via Baltica (юг)', toll: 'Виньетка', length: '88 км' },
+        { name: 'A2 Рига-Эстония', toll: 'Виньетка', length: '175 км' },
+        { name: 'A6 Рига-Даугавпилс', toll: 'Виньетка', length: '279 км' },
+        { name: 'A7 Via Baltica (через Бауску)', toll: 'Виньетка', length: '90 км' }
       ]
     },
-    safety: {
-      title: 'Безопасность на дорогах',
-      subtitle: 'Советы и статистика безопасности',
+    borders: {
+      title: 'Пограничные переходы',
+      subtitle: 'Информация для грузоперевозчиков',
+      crossings: [
+        { name: 'Гренцтале', country: 'Литва', type: 'EU внутренний', wait: '0-15 мин', hours: '24/7' },
+        { name: 'Терехова', country: 'Россия', type: 'Таможня', wait: '2-8 часов', hours: '24/7' },
+        { name: 'Виентули', country: 'Литва', type: 'EU внутренний', wait: '0-15 мин', hours: '24/7' },
+        { name: 'Айнажи', country: 'Эстония', type: 'EU внутренний', wait: '0-10 мин', hours: '24/7' }
+      ]
+    },
+    fuel: {
+      title: 'АЗС для грузовиков',
+      subtitle: 'Заправки с дизелем и сервисом',
+      stations: [
+        { brand: 'Circle K', count: '85+', diesel: 'Да', adblue: 'Да', parking: 'Да' },
+        { brand: 'Neste', count: '45+', diesel: 'Да', adblue: 'Да', parking: 'Да' },
+        { brand: 'Viada', count: '35+', diesel: 'Да', adblue: 'Частично', parking: 'Да' },
+        { brand: 'Gotika', count: '25+', diesel: 'Да', adblue: 'Да', parking: 'Да' }
+      ],
+      avgPrice: 'Средняя цена дизеля: ~1.45 EUR/л'
+    },
+    weights: {
+      title: 'Габариты и вес',
+      subtitle: 'Ограничения для грузовиков',
+      limits: [
+        { param: 'Максимальная высота', value: '4.0 м' },
+        { param: 'Максимальная ширина', value: '2.55 м (рефрижератор: 2.6 м)' },
+        { param: 'Максимальная длина (одиночка)', value: '12.0 м' },
+        { param: 'Максимальная длина (автопоезд)', value: '16.5 м' },
+        { param: 'Максимальная длина (седельный)', value: '18.75 м' },
+        { param: 'Максимальная масса', value: '40 тонн (44т с разрешением)' },
+        { param: 'Нагрузка на ось (одиночная)', value: '10 тонн' },
+        { param: 'Нагрузка на ось (двойная)', value: '11.5 тонн' }
+      ]
+    },
+    rest: {
+      title: 'Режим труда и отдыха',
+      subtitle: 'Требования ЕС для водителей',
+      rules: [
+        { rule: 'Ежедневное вождение', value: 'Макс. 9 часов (2 раза в неделю - 10ч)' },
+        { rule: 'Недельное вождение', value: 'Макс. 56 часов' },
+        { rule: 'Двухнедельное вождение', value: 'Макс. 90 часов' },
+        { rule: 'Перерыв', value: '45 мин после 4.5 часов (можно 15+30)' },
+        { rule: 'Ежедневный отдых', value: '11 часов (или 9ч сокращённый)' },
+        { rule: 'Еженедельный отдых', value: '45 часов (или 24ч сокращённый)' }
+      ]
+    },
+    services: {
+      title: 'Сервисы для грузовиков',
+      subtitle: 'Ремонт, шиномонтаж, помощь',
+      serviceList: [
+        { name: 'MAN Сервис Рига', type: 'Официальный дилер', phone: '+371 67 800 100' },
+        { name: 'Scania Latvia', type: 'Официальный дилер', phone: '+371 67 802 700' },
+        { name: 'Volvo Trucks Рига', type: 'Официальный дилер', phone: '+371 67 505 050' },
+        { name: 'TruckHelp 24/7', type: 'Эвакуация', phone: '+371 26 000 000' }
+      ]
+    },
+    weather: {
+      title: 'Погода и дороги',
+      subtitle: 'Актуальные условия движения',
       tips: [
-        'Соблюдайте дистанцию - минимум 2 секунды',
-        'Остерегайтесь диких животных на лесных участках',
-        'Проверяйте состояние шин перед дальней поездкой',
-        'Используйте зимнюю резину с 1 декабря по 1 марта',
-        'Не пользуйтесь телефоном за рулём'
-      ],
-      emergency: {
-        title: 'Экстренные номера',
-        police: 'Полиция: 110',
-        ambulance: 'Скорая помощь: 113',
-        roadside: 'Дорожная помощь: 1888'
-      }
-    },
-    statistics: {
-      title: 'Статистика и факты',
-      subtitle: 'Цифры о дорожной сети Латвии',
-      facts: [
-        { label: 'Общая протяжённость дорог', value: '20 229 км' },
-        { label: 'Государственные дороги', value: '7 782 км' },
-        { label: 'Местные дороги', value: '12 447 км' },
-        { label: 'Автомагистрали (A)', value: '1 647 км' },
-        { label: 'Региональные дороги (P)', value: '5 321 км' },
-        { label: 'Мосты', value: '958' },
-        { label: 'Туннели', value: '3' }
+        'Зимняя резина обязательна: 1 декабря - 1 марта',
+        'Цепи разрешены при снеге/гололёде',
+        'Проверяйте прогноз перед рейсом',
+        'Следите за ограничениями в жару (>30°C)'
       ]
     },
-    winter: {
-      title: 'Зимние дороги',
-      subtitle: 'Особенности вождения зимой в Латвии',
-      requirements: [
-        'Зимняя резина обязательна с 1 декабря по 1 марта',
-        'Минимальная глубина протектора: 4 мм',
-        'Шипованная резина разрешена с 1 октября по 30 апреля',
-        'Скребок и щётка должны быть в автомобиле'
-      ],
-      services: {
-        title: 'Зимнее обслуживание дорог',
-        items: ['Уборка снега на магистралях', 'Посыпка солью и песком', 'Круглосуточное дежурство служб']
-      }
-    },
-    cycling: {
-      title: 'Велодорожки',
-      subtitle: 'Велоинфраструктура Латвии',
-      routes: [
-        { name: 'EuroVelo 10', length: '497 км', desc: 'Маршрут Балтийского моря' },
-        { name: 'EuroVelo 11', length: '301 км', desc: 'Восточно-Европейский маршрут' },
-        { name: 'Рижские велодорожки', length: '143 км', desc: 'Городская сеть столицы' }
-      ],
-      tips: [
-        'Шлем рекомендуется для всех возрастов',
-        'Фонари обязательны в тёмное время',
-        'Отражатели на педалях и колёсах'
-      ]
-    },
-    historic: {
-      title: 'Исторические торговые пути',
-      subtitle: 'Древние маршруты через Латвию',
-      routes: [
-        { name: 'Янтарный путь', period: 'С бронзового века', desc: 'Торговля янтарём с Балтики на юг' },
-        { name: 'Путь из варяг в греки', period: 'IX-XI века', desc: 'Скандинавия - Византия через Двину' },
-        { name: 'Ганзейские пути', period: 'XIII-XVII века', desc: 'Торговые маршруты Ганзейского союза' },
-        { name: 'Почтовые тракты', period: 'XVIII-XIX века', desc: 'Государственные почтовые дороги' }
-      ]
-    },
-    bridges: {
-      title: 'Мосты Латвии',
-      subtitle: 'Архитектурные сооружения над реками',
-      notable: [
-        { name: 'Вантовый мост', location: 'Рига', year: '1981', length: '625 м' },
-        { name: 'Каменный мост', location: 'Рига', year: '1957', length: '503 м' },
-        { name: 'Островной мост', location: 'Рига', year: '2004', length: '812 м' },
-        { name: 'Южный мост', location: 'Рига', year: '2008', length: '803 м' },
-        { name: 'Кирпичный мост', location: 'Кулдига', year: '1874', length: '164 м' }
+    contacts: {
+      title: 'Полезные контакты',
+      subtitle: 'Экстренные службы и информация',
+      numbers: [
+        { name: 'Экстренные службы', number: '112' },
+        { name: 'Полиция', number: '110' },
+        { name: 'Дорожная информация', number: '+371 67 025 555' },
+        { name: 'Таможня', number: '+371 67 028 300' },
+        { name: 'VSIA (разрешения)', number: '+371 67 025 777' }
       ]
     },
     about: {
       title: 'О проекте',
-      subtitle: 'Информационный портал о дорогах Латвии',
-      description: 'Этот некоммерческий проект создан для предоставления актуальной информации о дорожной инфраструктуре Латвии. Наша цель — помочь водителям, туристам и всем интересующимся лучше узнать дорожную сеть страны.',
-      disclaimer: 'Информация носит справочный характер. Для актуальных данных обращайтесь к официальным источникам.',
-      sources: ['Latvijas Valsts ceļi', 'CSDD', 'Eurostat', 'Открытые данные']
+      subtitle: 'Информационный портал для дальнобойщиков',
+      description: 'Этот сайт создан для водителей грузовых автомобилей, совершающих рейсы через Латвию. Мы собрали всю необходимую информацию о виньетках, маршрутах, стоянках и правилах.',
+      disclaimer: 'Информация носит справочный характер. Уточняйте актуальные данные в официальных источниках.'
     },
     footer: {
-      rights: 'Некоммерческий информационный проект',
-      disclaimer: 'Информация носит справочный характер'
+      rights: 'Информационный портал для грузоперевозчиков',
+      disclaimer: 'Данные носят справочный характер'
     }
   },
   lv: {
     nav: {
       home: 'Sākums',
-      history: 'Vēsture',
-      highways: 'Automaģistrāles',
-      regional: 'Reģionālie',
-      local: 'Vietējie',
-      rules: 'CSN',
+      vignettes: 'Vinjetes',
+      routes: 'Maršruti',
+      parking: 'Stāvvietas',
+      rules: 'Noteikumi',
       map: 'Karte',
-      attractions: 'Apskates vietas',
-      safety: 'Drošība',
-      statistics: 'Statistika',
-      winter: 'Ziemas ceļi',
-      cycling: 'Veloceliņi',
-      historic: 'Tirdzniecības ceļi',
-      bridges: 'Tilti',
-      about: 'Par projektu'
+      tolls: 'Maksas ceļi',
+      borders: 'Robežas',
+      fuel: 'DUS',
+      weights: 'Gabarīti',
+      rest: 'Atpūta',
+      services: 'Servisi',
+      weather: 'Laikapstākļi',
+      contacts: 'Kontakti',
+      about: 'Par mums'
     },
     home: {
-      title: 'Latvijas Ceļi',
-      subtitle: 'Atklājiet Baltijas ceļu tīklu',
-      description: 'Informatīvs portāls par Latvijas ceļiem, vēsturi un infrastruktūru',
-      explore: 'Izpētīt',
-      totalRoads: 'Kopā ceļu',
-      highways: 'Automaģistrāļu',
-      bridges: 'Tiltu',
-      km: 'km'
+      title: 'Kravas pārvadājumi Latvijā',
+      subtitle: 'Viss kravas auto vadītājiem',
+      description: 'Vinjetes, maršruti, stāvvietas, noteikumi un noderīga informācija tālbraucējiem',
+      explore: 'Uzzināt vairāk',
+      totalRoads: 'Km ceļu',
+      trucks: 'Stāvvietas',
+      borders: 'Robežpunkti',
+      km: ''
     },
-    history: {
-      title: 'Latvijas ceļu vēsture',
-      subtitle: 'No senajiem tirdzniecības ceļiem līdz mūsdienu maģistrālēm',
-      timeline: [
-        { year: '1200', title: 'Hanzas tirdzniecības ceļi', desc: 'Pirmo tirdzniecības maršrutu veidošanās caur Rīgu' },
-        { year: '1561', title: 'Livonijas konfederācija', desc: 'Pasta ceļu attīstība starp pilsētām' },
-        { year: '1795', title: 'Krievijas impērija', desc: 'Valsts traktu būvniecība' },
-        { year: '1918', title: 'Neatkarība', desc: 'Nacionālā ceļu tīkla izveide' },
-        { year: '1940', title: 'Padomju periods', desc: 'Ceļu rekonstrukcija un paplašināšana' },
-        { year: '1991', title: 'Neatkarības atjaunošana', desc: 'Modernizācija pēc Eiropas standartiem' },
-        { year: '2004', title: 'Iestāšanās ES', desc: 'Liela mēroga investīcijas infrastruktūrā' }
+    vignettes: {
+      title: 'Latvijas vinjetes',
+      subtitle: 'Elektroniskā ceļu maksas sistēma kravas auto',
+      description: 'No 2024. gada Latvijā darbojas vinjetes sistēma kravas automobiļiem virs 3.5 tonnām',
+      prices: 'Tarifi',
+      priceList: [
+        { category: 'Kravas auto 3.5-12 tonnas', day: '8 EUR', week: '25 EUR', month: '55 EUR', year: '400 EUR' },
+        { category: 'Kravas auto > 12 t (2 asis)', day: '12 EUR', week: '40 EUR', month: '85 EUR', year: '650 EUR' },
+        { category: 'Kravas auto > 12 t (3+ asis)', day: '15 EUR', week: '50 EUR', month: '110 EUR', year: '850 EUR' }
+      ],
+      howToBuy: 'Kā iegādāties',
+      buySteps: [
+        'Tiešsaistē latviasvinjete.lv',
+        'Circle K, Neste, Viada degvielas uzpildes stacijās',
+        'Robežpunktos',
+        'Mobilajā lietotnē'
+      ],
+      important: 'Svarīgi: vinjete obligāta uz visām A-klases maģistrālēm'
+    },
+    routes: {
+      title: 'Kravas auto maršruti',
+      subtitle: 'Optimālie ceļi caur Latviju',
+      mainRoutes: [
+        { code: 'E67', name: 'Via Baltica', from: 'Lietuva', to: 'Igaunija', length: '310 km', desc: 'Galvenais tranzīta koridors' },
+        { code: 'E22', name: 'Rīga - Maskava', from: 'Rīga', to: 'Krievijas robeža', length: '279 km', desc: 'Austrumu koridors caur Rēzekni' },
+        { code: 'A9', name: 'Rīga - Liepāja', from: 'Rīga', to: 'Liepāja', length: '207 km', desc: 'Uz Liepājas ostu' },
+        { code: 'A10', name: 'Rīga - Ventspils', from: 'Rīga', to: 'Ventspils', length: '189 km', desc: 'Uz lielāko ostu' }
       ]
     },
-    highways: {
-      title: 'Latvijas automaģistrāles',
-      subtitle: 'Galvenās transporta artērijas',
-      roads: [
-        { code: 'A1', name: 'Rīga - Lietuvas robeža (Via Baltica)', length: '88 km', desc: 'Galvenā maģistrāle uz dienvidiem' },
-        { code: 'A2', name: 'Rīga - Igaunijas robeža', length: '175 km', desc: 'Ceļš uz ziemeļu Baltiju' },
-        { code: 'A3', name: 'Inčukalns - Valmiera - Igaunijas robeža', length: '137 km', desc: 'Austrumu maršruts uz Igauniju' },
-        { code: 'A4', name: 'Rīga - Lietuvas robeža (Bauska)', length: '66 km', desc: 'Alternatīvs ceļš uz dienvidiem' },
-        { code: 'A5', name: 'Rīgas šoseja - Salaspils - Babīte', length: '29 km', desc: 'Rīgas dienvidu apvedceļš' },
-        { code: 'A6', name: 'Rīga - Daugavpils - Baltkrievijas robeža', length: '279 km', desc: 'Austrumu koridors' },
-        { code: 'A7', name: 'Rīga - Bauska - Lietuvas robeža', length: '90 km', desc: 'Via Baltica caur Bausku' },
-        { code: 'A8', name: 'Rīga - Jelgava - Lietuvas robeža', length: '68 km', desc: 'Rietumu maršruts uz Lietuvu' },
-        { code: 'A9', name: 'Rīga - Liepāja', length: '207 km', desc: 'Ceļš uz Baltijas jūru' },
-        { code: 'A10', name: 'Rīga - Ventspils', length: '189 km', desc: 'Uz lielāko ostu' }
-      ]
-    },
-    regional: {
-      title: 'Reģionālie ceļi',
-      subtitle: 'P-ceļi, kas savieno pilsētas un rajonus',
-      description: 'Reģionālie ceļi (P-ceļi) veido tīklu, kas savieno rajonu centrus un svarīgas apdzīvotas vietas. Kopējais garums pārsniedz 5 000 km.',
-      features: [
-        'Divjoslu satiksme',
-        'Asfalta segums',
-        'Ātruma ierobežojums 90 km/h',
-        'Rajonu centru savienojums'
-      ]
-    },
-    local: {
-      title: 'Vietējie ceļi',
-      subtitle: 'Vietējās nozīmes ceļu tīkls',
-      description: 'Vietējie ceļi nodrošina piekļuvi apdzīvotām vietām, lauksaimniecības zemēm un objektiem. Garums pārsniedz 14 000 km.',
-      types: [
-        { name: 'Ceļi ar cieto segumu', percent: '45%' },
-        { name: 'Grants ceļi', percent: '40%' },
-        { name: 'Zemes ceļi', percent: '15%' }
+    parking: {
+      title: 'Kravas auto stāvvietas',
+      subtitle: 'Drošas atpūtas vietas',
+      features: ['Apsargāta teritorija', 'Duša un tualete', 'Kafejnīca', 'WiFi', 'Remonts'],
+      parkingList: [
+        { name: 'TruckStop Riga', location: 'Rīga, Krasta', spaces: '120', services: 'Pilns serviss', price: '15 EUR/nakts' },
+        { name: 'Baltic Truck Park', location: 'Salaspils', spaces: '80', services: 'Apsardze, duša', price: '12 EUR/nakts' },
+        { name: 'Via Baltica Park', location: 'Bauska', spaces: '60', services: 'Apsardze, kafejnīca', price: '10 EUR/nakts' },
+        { name: 'Ventspils Truck', location: 'Ventspils', spaces: '45', services: 'Osta, apsardze', price: '12 EUR/nakts' }
       ]
     },
     rules: {
-      title: 'Ceļu satiksmes noteikumi',
-      subtitle: 'Galvenie noteikumi autovadītājiem Latvijā',
+      title: 'Noteikumi kravas auto',
+      subtitle: 'CSN un ierobežojumi Latvijā',
       sections: [
-        { title: 'Ātruma režīms', items: ['Apdzīvotās vietās: 50 km/h', 'Ārpus apdzīvotām vietām: 90 km/h', 'Automaģistrālēs: 110-130 km/h'] },
-        { title: 'Apgaismojums', items: ['Tuvās gaismas obligātas visu gadu', 'Miglas lukturi miglā', 'Dienas gaitas gaismas atļautas'] },
-        { title: 'Drošības jostas', items: ['Obligātas visiem pasažieriem', 'Bērnu sēdekļi līdz 150 cm augumam', 'Sods par pārkāpumu: līdz 80 EUR'] },
-        { title: 'Alkohols', items: ['Pieļaujamais līmenis: 0,5 promiles', 'Iesācējiem: 0,2 promiles', 'Nopietni sodi par pārsniegšanu'] }
+        { title: 'Ātruma režīms', items: ['Apdzīvotās vietās: 50 km/h', 'Ārpus apdzīvotām vietām: 80 km/h', 'Uz automaģistrālēm: 90 km/h (kravas auto > 7.5t)'] },
+        { title: 'Gabarīti', items: ['Maksimālais augstums: 4.0 m', 'Maksimālais platums: 2.55 m', 'Maksimālais garums: 16.5 m (autovilciens: 18.75 m)'] },
+        { title: 'Svara ierobežojumi', items: ['Maksimālā masa: 40 tonnas', 'Slodze uz asi: līdz 11.5 tonnām', 'Atļaujas lielgabarītam VSIA'] },
+        { title: 'Kustības aizliegumi', items: ['Svētdienās: 00:00-24:00 (> 7.5t)', 'Svētku dienās: kustība aizliegta', 'Vasarā ierobežojumi karstumā'] }
       ]
     },
     map: {
-      title: 'Interaktīvā karte',
-      subtitle: 'Latvijas ceļu tīkls',
+      title: 'Karte kravas auto',
+      subtitle: 'Maršruti, stāvvietas, DUS',
       legend: {
-        highways: 'Automaģistrāles',
-        regional: 'Reģionālie',
-        cities: 'Pilsētas'
+        highways: 'Maģistrāles',
+        parking: 'Stāvvietas',
+        fuel: 'DUS'
       }
     },
-    attractions: {
-      title: 'Apskates vietas',
-      subtitle: 'Interesantas vietas gar Latvijas ceļiem',
-      places: [
-        { name: 'Sigulda', route: 'A2', desc: 'Latvijas Šveice, pilis un alas' },
-        { name: 'Rundāles pils', route: 'A7', desc: 'XVIII gadsimta baroka šedevrs' },
-        { name: 'Jūrmala', route: 'A10', desc: 'Kūrortpilsēta pie Baltijas jūras' },
-        { name: 'Kuldīga', route: 'P108', desc: 'Eiropas platākais ūdenskritums' },
-        { name: 'Cēsis', route: 'A3', desc: 'Viduslaiku pils un vecpilsēta' },
-        { name: 'Liepāja', route: 'A9', desc: 'Vēju pilsēta piekrastē' }
+    tolls: {
+      title: 'Maksas ceļi',
+      subtitle: 'Maksājumu sistēma Latvijā',
+      description: 'Latvijā nav klasisko maksas ceļu ar barjerām. Maksājumi tiek veikti caur vinjetes sistēmu.',
+      roads: [
+        { name: 'A1 Via Baltica (dienvidi)', toll: 'Vinjete', length: '88 km' },
+        { name: 'A2 Rīga-Igaunija', toll: 'Vinjete', length: '175 km' },
+        { name: 'A6 Rīga-Daugavpils', toll: 'Vinjete', length: '279 km' },
+        { name: 'A7 Via Baltica (caur Bausku)', toll: 'Vinjete', length: '90 km' }
       ]
     },
-    safety: {
-      title: 'Drošība uz ceļiem',
-      subtitle: 'Padomi un drošības statistika',
+    borders: {
+      title: 'Robežpunkti',
+      subtitle: 'Informācija kravu pārvadātājiem',
+      crossings: [
+        { name: 'Grenctāle', country: 'Lietuva', type: 'ES iekšējā', wait: '0-15 min', hours: '24/7' },
+        { name: 'Terehova', country: 'Krievija', type: 'Muita', wait: '2-8 stundas', hours: '24/7' },
+        { name: 'Vientuļi', country: 'Lietuva', type: 'ES iekšējā', wait: '0-15 min', hours: '24/7' },
+        { name: 'Ainaži', country: 'Igaunija', type: 'ES iekšējā', wait: '0-10 min', hours: '24/7' }
+      ]
+    },
+    fuel: {
+      title: 'DUS kravas auto',
+      subtitle: 'Degvielas uzpildes ar dīzeļdegvielu un servisu',
+      stations: [
+        { brand: 'Circle K', count: '85+', diesel: 'Jā', adblue: 'Jā', parking: 'Jā' },
+        { brand: 'Neste', count: '45+', diesel: 'Jā', adblue: 'Jā', parking: 'Jā' },
+        { brand: 'Viada', count: '35+', diesel: 'Jā', adblue: 'Daļēji', parking: 'Jā' },
+        { brand: 'Gotika', count: '25+', diesel: 'Jā', adblue: 'Jā', parking: 'Jā' }
+      ],
+      avgPrice: 'Vidējā dīzeļdegvielas cena: ~1.45 EUR/l'
+    },
+    weights: {
+      title: 'Gabarīti un svars',
+      subtitle: 'Ierobežojumi kravas auto',
+      limits: [
+        { param: 'Maksimālais augstums', value: '4.0 m' },
+        { param: 'Maksimālais platums', value: '2.55 m (refrižerators: 2.6 m)' },
+        { param: 'Maksimālais garums (atsevišķi)', value: '12.0 m' },
+        { param: 'Maksimālais garums (autovilciens)', value: '16.5 m' },
+        { param: 'Maksimālais garums (puspiekabe)', value: '18.75 m' },
+        { param: 'Maksimālā masa', value: '40 tonnas (44t ar atļauju)' },
+        { param: 'Slodze uz ass (viena)', value: '10 tonnas' },
+        { param: 'Slodze uz ass (dubulta)', value: '11.5 tonnas' }
+      ]
+    },
+    rest: {
+      title: 'Darba un atpūtas režīms',
+      subtitle: 'ES prasības vadītājiem',
+      rules: [
+        { rule: 'Ikdienas braukšana', value: 'Maks. 9 stundas (2x nedēļā - 10st)' },
+        { rule: 'Nedēļas braukšana', value: 'Maks. 56 stundas' },
+        { rule: 'Divu nedēļu braukšana', value: 'Maks. 90 stundas' },
+        { rule: 'Pārtraukums', value: '45 min pēc 4.5 stundām (var 15+30)' },
+        { rule: 'Ikdienas atpūta', value: '11 stundas (vai 9st saīsināta)' },
+        { rule: 'Iknedēļas atpūta', value: '45 stundas (vai 24st saīsināta)' }
+      ]
+    },
+    services: {
+      title: 'Servisi kravas auto',
+      subtitle: 'Remonts, riepas, palīdzība',
+      serviceList: [
+        { name: 'MAN Serviss Rīga', type: 'Oficiālais dīleris', phone: '+371 67 800 100' },
+        { name: 'Scania Latvia', type: 'Oficiālais dīleris', phone: '+371 67 802 700' },
+        { name: 'Volvo Trucks Rīga', type: 'Oficiālais dīleris', phone: '+371 67 505 050' },
+        { name: 'TruckHelp 24/7', type: 'Evakuācija', phone: '+371 26 000 000' }
+      ]
+    },
+    weather: {
+      title: 'Laikapstākļi un ceļi',
+      subtitle: 'Aktuālie kustības apstākļi',
       tips: [
-        'Ievērojiet distanci - vismaz 2 sekundes',
-        'Uzmanieties no savvaļas dzīvniekiem meža posmos',
-        'Pārbaudiet riepu stāvokli pirms tāla brauciena',
-        'Izmantojiet ziemas riepas no 1. decembra līdz 1. martam',
-        'Nelietojiet tālruni pie stūres'
-      ],
-      emergency: {
-        title: 'Ārkārtas numuri',
-        police: 'Policija: 110',
-        ambulance: 'Ātrā palīdzība: 113',
-        roadside: 'Ceļa palīdzība: 1888'
-      }
-    },
-    statistics: {
-      title: 'Statistika un fakti',
-      subtitle: 'Skaitļi par Latvijas ceļu tīklu',
-      facts: [
-        { label: 'Kopējais ceļu garums', value: '20 229 km' },
-        { label: 'Valsts ceļi', value: '7 782 km' },
-        { label: 'Vietējie ceļi', value: '12 447 km' },
-        { label: 'Automaģistrāles (A)', value: '1 647 km' },
-        { label: 'Reģionālie ceļi (P)', value: '5 321 km' },
-        { label: 'Tilti', value: '958' },
-        { label: 'Tuneļi', value: '3' }
+        'Ziemas riepas obligātas: 1. decembris - 1. marts',
+        'Ķēdes atļautas sniega/apledojuma gadījumā',
+        'Pārbaudiet prognozi pirms reisa',
+        'Sekojiet ierobežojumiem karstumā (>30°C)'
       ]
     },
-    winter: {
-      title: 'Ziemas ceļi',
-      subtitle: 'Braukšanas īpatnības ziemā Latvijā',
-      requirements: [
-        'Ziemas riepas obligātas no 1. decembra līdz 1. martam',
-        'Minimālais protektora dziļums: 4 mm',
-        'Radžu riepas atļautas no 1. oktobra līdz 30. aprīlim',
-        'Skrāpim un sukām jābūt automašīnā'
-      ],
-      services: {
-        title: 'Ceļu ziemas uzturēšana',
-        items: ['Sniega tīrīšana uz maģistrālēm', 'Kaisīšana ar sāli un smiltīm', 'Diennakts dienestu dežūras']
-      }
-    },
-    cycling: {
-      title: 'Veloceliņi',
-      subtitle: 'Latvijas veloinfrastruktūra',
-      routes: [
-        { name: 'EuroVelo 10', length: '497 km', desc: 'Baltijas jūras maršruts' },
-        { name: 'EuroVelo 11', length: '301 km', desc: 'Austrumeiropas maršruts' },
-        { name: 'Rīgas veloceliņi', length: '143 km', desc: 'Galvaspilsētas tīkls' }
-      ],
-      tips: [
-        'Ķivere ieteicama visiem vecumiem',
-        'Lukturi obligāti tumsā',
-        'Atstarotāji uz pedāļiem un riteņiem'
-      ]
-    },
-    historic: {
-      title: 'Vēsturiskie tirdzniecības ceļi',
-      subtitle: 'Senie maršruti caur Latviju',
-      routes: [
-        { name: 'Dzintara ceļš', period: 'No bronzas laikmeta', desc: 'Dzintara tirdzniecība no Baltijas uz dienvidiem' },
-        { name: 'Ceļš no varjagiem uz grieķiem', period: 'IX-XI gs.', desc: 'Skandināvija - Bizantija caur Daugavu' },
-        { name: 'Hanzas ceļi', period: 'XIII-XVII gs.', desc: 'Hanzas savienības tirdzniecības maršruti' },
-        { name: 'Pasta trakti', period: 'XVIII-XIX gs.', desc: 'Valsts pasta ceļi' }
-      ]
-    },
-    bridges: {
-      title: 'Latvijas tilti',
-      subtitle: 'Arhitektūras būves pār upēm',
-      notable: [
-        { name: 'Vanšu tilts', location: 'Rīga', year: '1981', length: '625 m' },
-        { name: 'Akmens tilts', location: 'Rīga', year: '1957', length: '503 m' },
-        { name: 'Salu tilts', location: 'Rīga', year: '2004', length: '812 m' },
-        { name: 'Dienvidu tilts', location: 'Rīga', year: '2008', length: '803 m' },
-        { name: 'Ķieģeļu tilts', location: 'Kuldīga', year: '1874', length: '164 m' }
+    contacts: {
+      title: 'Noderīgi kontakti',
+      subtitle: 'Ārkārtas dienesti un informācija',
+      numbers: [
+        { name: 'Ārkārtas dienesti', number: '112' },
+        { name: 'Policija', number: '110' },
+        { name: 'Ceļu informācija', number: '+371 67 025 555' },
+        { name: 'Muita', number: '+371 67 028 300' },
+        { name: 'VSIA (atļaujas)', number: '+371 67 025 777' }
       ]
     },
     about: {
       title: 'Par projektu',
-      subtitle: 'Informatīvs portāls par Latvijas ceļiem',
-      description: 'Šis nekomerciālais projekts ir izveidots, lai sniegtu aktuālu informāciju par Latvijas ceļu infrastruktūru. Mūsu mērķis ir palīdzēt autovadītājiem, tūristiem un visiem interesentiem labāk iepazīt valsts ceļu tīklu.',
-      disclaimer: 'Informācija ir uzziņas raksturs. Aktuāliem datiem vērsieties oficiālajos avotos.',
-      sources: ['Latvijas Valsts ceļi', 'CSDD', 'Eurostat', 'Atvērtie dati']
+      subtitle: 'Informatīvs portāls tālbraucējiem',
+      description: 'Šī vietne izveidota kravas automobiļu vadītājiem, kuri veic reisus caur Latviju. Esam apkopojuši visu nepieciešamo informāciju par vinjetēm, maršrutiem, stāvvietām un noteikumiem.',
+      disclaimer: 'Informācija ir uzziņas rakstura. Precizējiet aktuālos datus oficiālajos avotos.'
     },
     footer: {
-      rights: 'Nekomerciāls informatīvs projekts',
-      disclaimer: 'Informācija ir uzziņas rakstura'
+      rights: 'Informatīvs portāls kravu pārvadātājiem',
+      disclaimer: 'Dati ir uzziņas rakstura'
     }
   },
   en: {
     nav: {
       home: 'Home',
-      history: 'History',
-      highways: 'Highways',
-      regional: 'Regional',
-      local: 'Local',
-      rules: 'Traffic Rules',
+      vignettes: 'Vignettes',
+      routes: 'Routes',
+      parking: 'Truck Stops',
+      rules: 'Regulations',
       map: 'Map',
-      attractions: 'Attractions',
-      safety: 'Safety',
-      statistics: 'Statistics',
-      winter: 'Winter Roads',
-      cycling: 'Cycling',
-      historic: 'Trade Routes',
-      bridges: 'Bridges',
+      tolls: 'Toll Roads',
+      borders: 'Border Crossings',
+      fuel: 'Fuel Stations',
+      weights: 'Weight Limits',
+      rest: 'Rest Times',
+      services: 'Services',
+      weather: 'Weather',
+      contacts: 'Contacts',
       about: 'About'
     },
     home: {
-      title: 'Roads of Latvia',
-      subtitle: 'Discover the Baltic Road Network',
-      description: 'Information portal about roads, history and infrastructure of Latvia',
-      explore: 'Explore',
-      totalRoads: 'Total Roads',
-      highways: 'Highways',
-      bridges: 'Bridges',
-      km: 'km'
+      title: 'Trucking in Latvia',
+      subtitle: 'Everything for truck drivers',
+      description: 'Vignettes, routes, truck stops, regulations and useful information for truckers',
+      explore: 'Learn More',
+      totalRoads: 'Km of roads',
+      trucks: 'Truck stops',
+      borders: 'Border crossings',
+      km: ''
     },
-    history: {
-      title: 'History of Latvian Roads',
-      subtitle: 'From ancient trade routes to modern highways',
-      timeline: [
-        { year: '1200', title: 'Hanseatic Trade Routes', desc: 'Formation of first trade routes through Riga' },
-        { year: '1561', title: 'Livonian Confederation', desc: 'Development of postal roads between cities' },
-        { year: '1795', title: 'Russian Empire', desc: 'Construction of state highways' },
-        { year: '1918', title: 'Independence', desc: 'Creation of national road network' },
-        { year: '1940', title: 'Soviet Period', desc: 'Road reconstruction and expansion' },
-        { year: '1991', title: 'Restored Independence', desc: 'Modernization to European standards' },
-        { year: '2004', title: 'EU Accession', desc: 'Large-scale infrastructure investments' }
+    vignettes: {
+      title: 'Latvia Vignettes',
+      subtitle: 'Electronic road toll system for trucks',
+      description: 'Since 2024, Latvia has a vignette system for trucks over 3.5 tons',
+      prices: 'Prices',
+      priceList: [
+        { category: 'Trucks 3.5-12 tons', day: '8 EUR', week: '25 EUR', month: '55 EUR', year: '400 EUR' },
+        { category: 'Trucks > 12t (2 axles)', day: '12 EUR', week: '40 EUR', month: '85 EUR', year: '650 EUR' },
+        { category: 'Trucks > 12t (3+ axles)', day: '15 EUR', week: '50 EUR', month: '110 EUR', year: '850 EUR' }
+      ],
+      howToBuy: 'How to Buy',
+      buySteps: [
+        'Online at latviasvinjete.lv',
+        'At Circle K, Neste, Viada gas stations',
+        'At border crossings',
+        'Via mobile app'
+      ],
+      important: 'Important: vignette is mandatory on all A-class highways'
+    },
+    routes: {
+      title: 'Truck Routes',
+      subtitle: 'Optimal routes through Latvia',
+      mainRoutes: [
+        { code: 'E67', name: 'Via Baltica', from: 'Lithuania', to: 'Estonia', length: '310 km', desc: 'Main transit corridor' },
+        { code: 'E22', name: 'Riga - Moscow', from: 'Riga', to: 'Russia border', length: '279 km', desc: 'Eastern corridor via Rezekne' },
+        { code: 'A9', name: 'Riga - Liepaja', from: 'Riga', to: 'Liepaja', length: '207 km', desc: 'To Liepaja port' },
+        { code: 'A10', name: 'Riga - Ventspils', from: 'Riga', to: 'Ventspils', length: '189 km', desc: 'To largest port' }
       ]
     },
-    highways: {
-      title: 'Latvian Highways',
-      subtitle: 'Main transport arteries of the country',
-      roads: [
-        { code: 'A1', name: 'Riga - Lithuanian Border (Via Baltica)', length: '88 km', desc: 'Main highway south' },
-        { code: 'A2', name: 'Riga - Estonian Border', length: '175 km', desc: 'Route to northern Baltic' },
-        { code: 'A3', name: 'Inčukalns - Valmiera - Estonian Border', length: '137 km', desc: 'Eastern route to Estonia' },
-        { code: 'A4', name: 'Riga - Lithuanian Border (Bauska)', length: '66 km', desc: 'Alternative southern route' },
-        { code: 'A5', name: 'Riga Road - Salaspils - Babīte', length: '29 km', desc: 'Riga southern bypass' },
-        { code: 'A6', name: 'Riga - Daugavpils - Belarus Border', length: '279 km', desc: 'Eastern corridor' },
-        { code: 'A7', name: 'Riga - Bauska - Lithuanian Border', length: '90 km', desc: 'Via Baltica through Bauska' },
-        { code: 'A8', name: 'Riga - Jelgava - Lithuanian Border', length: '68 km', desc: 'Western route to Lithuania' },
-        { code: 'A9', name: 'Riga - Liepāja', length: '207 km', desc: 'Route to the Baltic Sea' },
-        { code: 'A10', name: 'Riga - Ventspils', length: '189 km', desc: 'To the largest port' }
-      ]
-    },
-    regional: {
-      title: 'Regional Roads',
-      subtitle: 'P-roads connecting cities and districts',
-      description: 'Regional roads (P-roads) form a network connecting district centers and important settlements. Total length exceeds 5,000 km.',
-      features: [
-        'Two-lane traffic',
-        'Asphalt surface',
-        'Speed limit 90 km/h',
-        'District center connections'
-      ]
-    },
-    local: {
-      title: 'Local Roads',
-      subtitle: 'Local significance road network',
-      description: 'Local roads provide access to settlements, agricultural lands and facilities. Length exceeds 14,000 km.',
-      types: [
-        { name: 'Paved roads', percent: '45%' },
-        { name: 'Gravel roads', percent: '40%' },
-        { name: 'Dirt roads', percent: '15%' }
+    parking: {
+      title: 'Truck Parking',
+      subtitle: 'Safe rest areas',
+      features: ['Secured area', 'Shower & toilet', 'Restaurant', 'WiFi', 'Repair'],
+      parkingList: [
+        { name: 'TruckStop Riga', location: 'Riga, Krasta', spaces: '120', services: 'Full service', price: '15 EUR/night' },
+        { name: 'Baltic Truck Park', location: 'Salaspils', spaces: '80', services: 'Security, shower', price: '12 EUR/night' },
+        { name: 'Via Baltica Park', location: 'Bauska', spaces: '60', services: 'Security, cafe', price: '10 EUR/night' },
+        { name: 'Ventspils Truck', location: 'Ventspils', spaces: '45', services: 'Port, security', price: '12 EUR/night' }
       ]
     },
     rules: {
-      title: 'Traffic Rules',
-      subtitle: 'Main rules for drivers in Latvia',
+      title: 'Truck Regulations',
+      subtitle: 'Traffic rules and restrictions in Latvia',
       sections: [
-        { title: 'Speed Limits', items: ['In populated areas: 50 km/h', 'Outside populated areas: 90 km/h', 'On highways: 110-130 km/h'] },
-        { title: 'Lighting', items: ['Low beam mandatory year-round', 'Fog lights in foggy conditions', 'Daytime running lights allowed'] },
-        { title: 'Seat Belts', items: ['Mandatory for all passengers', 'Child seats up to 150 cm height', 'Fine for violation: up to 80 EUR'] },
-        { title: 'Alcohol', items: ['Permissible level: 0.5 per mille', 'For beginners: 0.2 per mille', 'Serious fines for exceeding'] }
+        { title: 'Speed Limits', items: ['In urban areas: 50 km/h', 'Outside urban areas: 80 km/h', 'On highways: 90 km/h (trucks > 7.5t)'] },
+        { title: 'Dimensions', items: ['Maximum height: 4.0 m', 'Maximum width: 2.55 m', 'Maximum length: 16.5 m (road train: 18.75 m)'] },
+        { title: 'Weight Limits', items: ['Maximum weight: 40 tons', 'Axle load: up to 11.5 tons', 'Oversize permits at VSIA'] },
+        { title: 'Driving Bans', items: ['Sundays: 00:00-24:00 (> 7.5t)', 'Public holidays: driving prohibited', 'Summer restrictions in heat'] }
       ]
     },
     map: {
-      title: 'Interactive Map',
-      subtitle: 'Road Network of Latvia',
+      title: 'Truck Map',
+      subtitle: 'Routes, parking, fuel stations',
       legend: {
         highways: 'Highways',
-        regional: 'Regional',
-        cities: 'Cities'
+        parking: 'Truck stops',
+        fuel: 'Fuel stations'
       }
     },
-    attractions: {
-      title: 'Attractions',
-      subtitle: 'Interesting places along Latvian roads',
-      places: [
-        { name: 'Sigulda', route: 'A2', desc: 'Switzerland of Latvia, castles and caves' },
-        { name: 'Rundāle Palace', route: 'A7', desc: '18th century baroque masterpiece' },
-        { name: 'Jūrmala', route: 'A10', desc: 'Resort city on the Baltic coast' },
-        { name: 'Kuldīga', route: 'P108', desc: 'Widest waterfall in Europe' },
-        { name: 'Cēsis', route: 'A3', desc: 'Medieval castle and old town' },
-        { name: 'Liepāja', route: 'A9', desc: 'City of winds on the coast' }
+    tolls: {
+      title: 'Toll Roads',
+      subtitle: 'Payment system in Latvia',
+      description: 'Latvia has no classic toll roads with barriers. Payment is made through the vignette system.',
+      roads: [
+        { name: 'A1 Via Baltica (south)', toll: 'Vignette', length: '88 km' },
+        { name: 'A2 Riga-Estonia', toll: 'Vignette', length: '175 km' },
+        { name: 'A6 Riga-Daugavpils', toll: 'Vignette', length: '279 km' },
+        { name: 'A7 Via Baltica (via Bauska)', toll: 'Vignette', length: '90 km' }
       ]
     },
-    safety: {
-      title: 'Road Safety',
-      subtitle: 'Tips and safety statistics',
+    borders: {
+      title: 'Border Crossings',
+      subtitle: 'Information for freight carriers',
+      crossings: [
+        { name: 'Grenctale', country: 'Lithuania', type: 'EU internal', wait: '0-15 min', hours: '24/7' },
+        { name: 'Terehova', country: 'Russia', type: 'Customs', wait: '2-8 hours', hours: '24/7' },
+        { name: 'Vientuli', country: 'Lithuania', type: 'EU internal', wait: '0-15 min', hours: '24/7' },
+        { name: 'Ainazi', country: 'Estonia', type: 'EU internal', wait: '0-10 min', hours: '24/7' }
+      ]
+    },
+    fuel: {
+      title: 'Truck Fuel Stations',
+      subtitle: 'Gas stations with diesel and services',
+      stations: [
+        { brand: 'Circle K', count: '85+', diesel: 'Yes', adblue: 'Yes', parking: 'Yes' },
+        { brand: 'Neste', count: '45+', diesel: 'Yes', adblue: 'Yes', parking: 'Yes' },
+        { brand: 'Viada', count: '35+', diesel: 'Yes', adblue: 'Partial', parking: 'Yes' },
+        { brand: 'Gotika', count: '25+', diesel: 'Yes', adblue: 'Yes', parking: 'Yes' }
+      ],
+      avgPrice: 'Average diesel price: ~1.45 EUR/l'
+    },
+    weights: {
+      title: 'Dimensions & Weight',
+      subtitle: 'Truck restrictions',
+      limits: [
+        { param: 'Maximum height', value: '4.0 m' },
+        { param: 'Maximum width', value: '2.55 m (refrigerator: 2.6 m)' },
+        { param: 'Maximum length (single)', value: '12.0 m' },
+        { param: 'Maximum length (road train)', value: '16.5 m' },
+        { param: 'Maximum length (semi-trailer)', value: '18.75 m' },
+        { param: 'Maximum weight', value: '40 tons (44t with permit)' },
+        { param: 'Single axle load', value: '10 tons' },
+        { param: 'Double axle load', value: '11.5 tons' }
+      ]
+    },
+    rest: {
+      title: 'Driving & Rest Times',
+      subtitle: 'EU requirements for drivers',
+      rules: [
+        { rule: 'Daily driving', value: 'Max. 9 hours (2x per week - 10h)' },
+        { rule: 'Weekly driving', value: 'Max. 56 hours' },
+        { rule: 'Bi-weekly driving', value: 'Max. 90 hours' },
+        { rule: 'Break', value: '45 min after 4.5 hours (can be 15+30)' },
+        { rule: 'Daily rest', value: '11 hours (or 9h reduced)' },
+        { rule: 'Weekly rest', value: '45 hours (or 24h reduced)' }
+      ]
+    },
+    services: {
+      title: 'Truck Services',
+      subtitle: 'Repair, tires, assistance',
+      serviceList: [
+        { name: 'MAN Service Riga', type: 'Official dealer', phone: '+371 67 800 100' },
+        { name: 'Scania Latvia', type: 'Official dealer', phone: '+371 67 802 700' },
+        { name: 'Volvo Trucks Riga', type: 'Official dealer', phone: '+371 67 505 050' },
+        { name: 'TruckHelp 24/7', type: 'Towing', phone: '+371 26 000 000' }
+      ]
+    },
+    weather: {
+      title: 'Weather & Roads',
+      subtitle: 'Current driving conditions',
       tips: [
-        'Keep distance - at least 2 seconds',
-        'Watch for wildlife on forest sections',
-        'Check tire condition before long trips',
-        'Use winter tires from December 1 to March 1',
-        'Do not use phone while driving'
-      ],
-      emergency: {
-        title: 'Emergency Numbers',
-        police: 'Police: 110',
-        ambulance: 'Ambulance: 113',
-        roadside: 'Roadside Assistance: 1888'
-      }
-    },
-    statistics: {
-      title: 'Statistics and Facts',
-      subtitle: 'Numbers about Latvian road network',
-      facts: [
-        { label: 'Total road length', value: '20,229 km' },
-        { label: 'State roads', value: '7,782 km' },
-        { label: 'Local roads', value: '12,447 km' },
-        { label: 'Highways (A)', value: '1,647 km' },
-        { label: 'Regional roads (P)', value: '5,321 km' },
-        { label: 'Bridges', value: '958' },
-        { label: 'Tunnels', value: '3' }
+        'Winter tires mandatory: December 1 - March 1',
+        'Chains allowed in snow/ice conditions',
+        'Check forecast before trip',
+        'Watch for restrictions in heat (>30°C)'
       ]
     },
-    winter: {
-      title: 'Winter Roads',
-      subtitle: 'Winter driving specifics in Latvia',
-      requirements: [
-        'Winter tires mandatory from December 1 to March 1',
-        'Minimum tread depth: 4 mm',
-        'Studded tires allowed from October 1 to April 30',
-        'Scraper and brush must be in the car'
-      ],
-      services: {
-        title: 'Winter Road Maintenance',
-        items: ['Snow clearing on highways', 'Salt and sand spreading', '24-hour service duty']
-      }
-    },
-    cycling: {
-      title: 'Cycling Routes',
-      subtitle: 'Latvian cycling infrastructure',
-      routes: [
-        { name: 'EuroVelo 10', length: '497 km', desc: 'Baltic Sea Route' },
-        { name: 'EuroVelo 11', length: '301 km', desc: 'Eastern European Route' },
-        { name: 'Riga Cycling Paths', length: '143 km', desc: 'Capital city network' }
-      ],
-      tips: [
-        'Helmet recommended for all ages',
-        'Lights mandatory in darkness',
-        'Reflectors on pedals and wheels'
-      ]
-    },
-    historic: {
-      title: 'Historic Trade Routes',
-      subtitle: 'Ancient routes through Latvia',
-      routes: [
-        { name: 'Amber Road', period: 'Since Bronze Age', desc: 'Amber trade from Baltic to south' },
-        { name: 'Varangian to Greek Route', period: '9th-11th century', desc: 'Scandinavia - Byzantium via Daugava' },
-        { name: 'Hanseatic Routes', period: '13th-17th century', desc: 'Hanseatic League trade routes' },
-        { name: 'Postal Highways', period: '18th-19th century', desc: 'State postal roads' }
-      ]
-    },
-    bridges: {
-      title: 'Bridges of Latvia',
-      subtitle: 'Architectural structures over rivers',
-      notable: [
-        { name: 'Vanšu Bridge', location: 'Riga', year: '1981', length: '625 m' },
-        { name: 'Stone Bridge', location: 'Riga', year: '1957', length: '503 m' },
-        { name: 'Island Bridge', location: 'Riga', year: '2004', length: '812 m' },
-        { name: 'Southern Bridge', location: 'Riga', year: '2008', length: '803 m' },
-        { name: 'Brick Bridge', location: 'Kuldīga', year: '1874', length: '164 m' }
+    contacts: {
+      title: 'Useful Contacts',
+      subtitle: 'Emergency services and information',
+      numbers: [
+        { name: 'Emergency services', number: '112' },
+        { name: 'Police', number: '110' },
+        { name: 'Road information', number: '+371 67 025 555' },
+        { name: 'Customs', number: '+371 67 028 300' },
+        { name: 'VSIA (permits)', number: '+371 67 025 777' }
       ]
     },
     about: {
-      title: 'About the Project',
-      subtitle: 'Information portal about Latvian roads',
-      description: 'This non-commercial project was created to provide current information about Latvian road infrastructure. Our goal is to help drivers, tourists and all interested parties better understand the country\'s road network.',
-      disclaimer: 'Information is for reference only. For current data, refer to official sources.',
-      sources: ['Latvijas Valsts ceļi', 'CSDD', 'Eurostat', 'Open Data']
+      title: 'About',
+      subtitle: 'Information portal for truckers',
+      description: 'This website is created for truck drivers traveling through Latvia. We have collected all necessary information about vignettes, routes, parking and regulations.',
+      disclaimer: 'Information is for reference only. Verify current data from official sources.'
     },
     footer: {
-      rights: 'Non-commercial information project',
-      disclaimer: 'Information is for reference purposes'
+      rights: 'Information portal for freight carriers',
+      disclaimer: 'Data is for reference purposes'
     }
   }
 };
