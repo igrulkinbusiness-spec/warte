@@ -1,11 +1,40 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { CreditCard, CheckCircle, AlertTriangle, ExternalLink } from 'lucide-react';
-import { Button } from '../components/ui/button';
+import { CreditCard, AlertTriangle, MapPin, Fuel, Globe, Smartphone } from 'lucide-react';
 
 export const VignettesPage = () => {
   const { t, language } = useLanguage();
+
+  const purchaseLocations = {
+    lv: [
+      { icon: Globe, text: 'Tiešsaistē portālā latviasvinjete.lv' },
+      { icon: Fuel, text: 'Circle K, Neste, Viada degvielas uzpildes stacijās' },
+      { icon: MapPin, text: 'Robežpunktos' },
+      { icon: Smartphone, text: 'Mobilajā lietotnē' }
+    ],
+    en: [
+      { icon: Globe, text: 'Online at latviasvinjete.lv' },
+      { icon: Fuel, text: 'At Circle K, Neste, Viada gas stations' },
+      { icon: MapPin, text: 'At border crossings' },
+      { icon: Smartphone, text: 'Via mobile app' }
+    ],
+    ru: [
+      { icon: Globe, text: 'Онлайн на сайте latviasvinjete.lv' },
+      { icon: Fuel, text: 'На заправках Circle K, Neste, Viada' },
+      { icon: MapPin, text: 'На пограничных пунктах' },
+      { icon: Smartphone, text: 'Через мобильное приложение' }
+    ]
+  };
+
+  const sectionTitles = {
+    lv: { where: 'Kur iegādāties', prices: 'Tarifi', category: 'Kategorija', day: '1 diena', week: '1 nedēļa', month: '1 mēnesis', year: '1 gads' },
+    en: { where: 'Where to purchase', prices: 'Prices', category: 'Category', day: '1 day', week: '1 week', month: '1 month', year: '1 year' },
+    ru: { where: 'Где приобрести', prices: 'Тарифы', category: 'Категория', day: '1 день', week: '1 неделя', month: '1 месяц', year: '1 год' }
+  };
+
+  const titles = sectionTitles[language] || sectionTitles.lv;
+  const locations = purchaseLocations[language] || purchaseLocations.lv;
 
   return (
     <div data-testid="vignettes-page" className="min-h-screen">
@@ -49,28 +78,18 @@ export const VignettesPage = () => {
       <section className="py-16 bg-[#F9F9F7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl font-bold text-[#2D4F1E] mb-8 text-center">
-            {t.vignettes.prices}
+            {titles.prices}
           </h2>
           
           <div className="overflow-x-auto">
             <table className="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
               <thead className="bg-[#2D4F1E] text-white">
                 <tr>
-                  <th className="px-6 py-4 text-left font-semibold">
-                    {language === 'ru' ? 'Категория' : language === 'lv' ? 'Kategorija' : 'Category'}
-                  </th>
-                  <th className="px-6 py-4 text-center font-semibold">
-                    {language === 'ru' ? '1 день' : language === 'lv' ? '1 diena' : '1 day'}
-                  </th>
-                  <th className="px-6 py-4 text-center font-semibold">
-                    {language === 'ru' ? '1 неделя' : language === 'lv' ? '1 nedēļa' : '1 week'}
-                  </th>
-                  <th className="px-6 py-4 text-center font-semibold">
-                    {language === 'ru' ? '1 месяц' : language === 'lv' ? '1 mēnesis' : '1 month'}
-                  </th>
-                  <th className="px-6 py-4 text-center font-semibold">
-                    {language === 'ru' ? '1 год' : language === 'lv' ? '1 gads' : '1 year'}
-                  </th>
+                  <th className="px-6 py-4 text-left font-semibold">{titles.category}</th>
+                  <th className="px-6 py-4 text-center font-semibold">{titles.day}</th>
+                  <th className="px-6 py-4 text-center font-semibold">{titles.week}</th>
+                  <th className="px-6 py-4 text-center font-semibold">{titles.month}</th>
+                  <th className="px-6 py-4 text-center font-semibold">{titles.year}</th>
                 </tr>
               </thead>
               <tbody>
@@ -89,38 +108,32 @@ export const VignettesPage = () => {
         </div>
       </section>
 
-      {/* How to Buy */}
+      {/* Where to Purchase - Information Only */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl font-bold text-[#2D4F1E] mb-8 text-center">
-            {t.vignettes.howToBuy}
+            {titles.where}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {t.vignettes.buySteps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-[#F9F9F7] p-6 rounded-2xl"
-              >
-                <div className="w-10 h-10 bg-[#2D4F1E] rounded-full flex items-center justify-center text-white font-bold mb-4">
-                  {index + 1}
-                </div>
-                <p className="text-gray-700">{step}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <a href="https://latviasvinjete.lv" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-[#9D2235] hover:bg-[#7D1B2A] text-white rounded-full px-8 py-4">
-                <ExternalLink className="w-5 h-5 mr-2" />
-                {language === 'ru' ? 'Купить онлайн' : language === 'lv' ? 'Pirkt tiešsaistē' : 'Buy Online'}
-              </Button>
-            </a>
+            {locations.map((location, index) => {
+              const Icon = location.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-[#F9F9F7] p-6 rounded-2xl"
+                >
+                  <div className="w-12 h-12 bg-[#2D4F1E] rounded-xl flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-[#EBA937]" />
+                  </div>
+                  <p className="text-gray-700">{location.text}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
