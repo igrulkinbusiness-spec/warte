@@ -18,6 +18,8 @@ import { ServicesPage } from "./pages/ServicesPage";
 import { WeatherPage } from "./pages/WeatherPage";
 import { ContactsPage } from "./pages/ContactsPage";
 import { AboutPage } from "./pages/AboutPage";
+import { PrivacyPage } from "./pages/PrivacyPage";
+import { TermsPage } from "./pages/TermsPage";
 
 function App() {
   return (
