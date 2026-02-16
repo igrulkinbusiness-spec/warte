@@ -1,40 +1,99 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { CreditCard, AlertTriangle, MapPin, Fuel, Globe, Smartphone } from 'lucide-react';
+import { CreditCard, AlertTriangle, MapPin, Fuel, Globe, Smartphone, Shield, AlertCircle, CheckCircle, Route } from 'lucide-react';
 
 export const VignettesPage = () => {
   const { t, language } = useLanguage();
 
-  const purchaseLocations = {
-    lv: [
-      { icon: Globe, text: 'Tiešsaistē portālā latviasvinjete.lv' },
-      { icon: Fuel, text: 'Circle K, Neste, Viada degvielas uzpildes stacijās' },
-      { icon: MapPin, text: 'Robežpunktos' },
-      { icon: Smartphone, text: 'Mobilajā lietotnē' }
-    ],
-    en: [
-      { icon: Globe, text: 'Online at latviasvinjete.lv' },
-      { icon: Fuel, text: 'At Circle K, Neste, Viada gas stations' },
-      { icon: MapPin, text: 'At border crossings' },
-      { icon: Smartphone, text: 'Via mobile app' }
-    ],
-    ru: [
-      { icon: Globe, text: 'Онлайн на сайте latviasvinjete.lv' },
-      { icon: Fuel, text: 'На заправках Circle K, Neste, Viada' },
-      { icon: MapPin, text: 'На пограничных пунктах' },
-      { icon: Smartphone, text: 'Через мобильное приложение' }
-    ]
+  const content = {
+    lv: {
+      titles: {
+        prices: 'Tarifi',
+        category: 'Kategorija',
+        day: '1 diena',
+        week: '1 nedēļa',
+        month: '1 mēnesis',
+        year: '1 gads',
+        where: 'Kur iegādāties',
+        why: 'Kāpēc nepieciešama vinjete?',
+        fines: 'Sodi par pārkāpumiem',
+        roads: 'Kur nepieciešama vinjete?'
+      },
+      whyText: 'Vinjete ir obligāta maksa par Latvijas valsts autoceļu izmantošanu kravas automobiļiem ar pilnu masu virs 3,5 tonnām. Iegūtie līdzekļi tiek izmantoti ceļu uzturēšanai un remontam.',
+      finesList: [
+        { fine: '400-700 EUR', desc: 'Par braukšanu bez derīgas vinjetes' },
+        { fine: '150-350 EUR', desc: 'Par nepareizi noformētu vinjeti' },
+        { fine: '700-1400 EUR', desc: 'Par atkārtotu pārkāpumu 12 mēnešu laikā' }
+      ],
+      roadsInfo: 'Vinjete obligāta uz visiem A klases autoceļiem (automaģistrālēm) Latvijā. Tas ietver galvenos tranzīta koridorus: Via Baltica (A1, A7), Rīga-Maskava (A6), Rīga-Liepāja (A9), Rīga-Ventspils (A10).',
+      locations: [
+        { icon: Globe, text: 'Tiešsaistē portālā latviasvinjete.lv' },
+        { icon: Fuel, text: 'Circle K, Neste, Viada degvielas uzpildes stacijās' },
+        { icon: MapPin, text: 'Robežpunktos' },
+        { icon: Smartphone, text: 'Mobilajā lietotnē' }
+      ],
+      note: 'Pārliecinieties, ka vinjete ir aktīva pirms iebraukšanas A klases ceļā. Vinjeti var iegādāties līdz 30 dienām pirms tās derīguma sākuma.'
+    },
+    en: {
+      titles: {
+        prices: 'Prices',
+        category: 'Category',
+        day: '1 day',
+        week: '1 week',
+        month: '1 month',
+        year: '1 year',
+        where: 'Where to purchase',
+        why: 'Why is a vignette required?',
+        fines: 'Fines for violations',
+        roads: 'Where is a vignette required?'
+      },
+      whyText: 'A vignette is a mandatory fee for using Latvian state roads for trucks with a total mass over 3.5 tons. The collected funds are used for road maintenance and repairs.',
+      finesList: [
+        { fine: '400-700 EUR', desc: 'For driving without a valid vignette' },
+        { fine: '150-350 EUR', desc: 'For incorrectly issued vignette' },
+        { fine: '700-1400 EUR', desc: 'For repeated violation within 12 months' }
+      ],
+      roadsInfo: 'Vignette is mandatory on all A-class roads (highways) in Latvia. This includes main transit corridors: Via Baltica (A1, A7), Riga-Moscow (A6), Riga-Liepaja (A9), Riga-Ventspils (A10).',
+      locations: [
+        { icon: Globe, text: 'Online at latviasvinjete.lv' },
+        { icon: Fuel, text: 'At Circle K, Neste, Viada gas stations' },
+        { icon: MapPin, text: 'At border crossings' },
+        { icon: Smartphone, text: 'Via mobile app' }
+      ],
+      note: 'Make sure the vignette is active before entering an A-class road. Vignettes can be purchased up to 30 days before validity starts.'
+    },
+    ru: {
+      titles: {
+        prices: 'Тарифы',
+        category: 'Категория',
+        day: '1 день',
+        week: '1 неделя',
+        month: '1 месяц',
+        year: '1 год',
+        where: 'Где приобрести',
+        why: 'Зачем нужна виньетка?',
+        fines: 'Штрафы за нарушения',
+        roads: 'Где требуется виньетка?'
+      },
+      whyText: 'Виньетка — обязательный сбор за использование государственных дорог Латвии для грузовых автомобилей с полной массой более 3,5 тонн. Собранные средства направляются на содержание и ремонт дорог.',
+      finesList: [
+        { fine: '400-700 EUR', desc: 'За движение без действующей виньетки' },
+        { fine: '150-350 EUR', desc: 'За неправильно оформленную виньетку' },
+        { fine: '700-1400 EUR', desc: 'За повторное нарушение в течение 12 месяцев' }
+      ],
+      roadsInfo: 'Виньетка обязательна на всех дорогах класса A (автомагистралях) Латвии. Это включает основные транзитные коридоры: Via Baltica (A1, A7), Рига-Москва (A6), Рига-Лиепая (A9), Рига-Вентспилс (A10).',
+      locations: [
+        { icon: Globe, text: 'Онлайн на сайте latviasvinjete.lv' },
+        { icon: Fuel, text: 'На заправках Circle K, Neste, Viada' },
+        { icon: MapPin, text: 'На пограничных пунктах' },
+        { icon: Smartphone, text: 'Через мобильное приложение' }
+      ],
+      note: 'Убедитесь, что виньетка активна перед въездом на дорогу класса A. Виньетку можно приобрести за 30 дней до начала срока действия.'
+    }
   };
 
-  const sectionTitles = {
-    lv: { where: 'Kur iegādāties', prices: 'Tarifi', category: 'Kategorija', day: '1 diena', week: '1 nedēļa', month: '1 mēnesis', year: '1 gads' },
-    en: { where: 'Where to purchase', prices: 'Prices', category: 'Category', day: '1 day', week: '1 week', month: '1 month', year: '1 year' },
-    ru: { where: 'Где приобрести', prices: 'Тарифы', category: 'Категория', day: '1 день', week: '1 неделя', month: '1 месяц', year: '1 год' }
-  };
-
-  const titles = sectionTitles[language] || sectionTitles.lv;
-  const locations = purchaseLocations[language] || purchaseLocations.lv;
+  const c = content[language] || content.lv;
 
   return (
     <div data-testid="vignettes-page" className="min-h-screen">
@@ -59,7 +118,7 @@ export const VignettesPage = () => {
         </div>
       </section>
 
-      {/* Description */}
+      {/* Important Notice */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#EBA937]/10 border-l-4 border-[#EBA937] p-6 rounded-r-xl">
@@ -74,22 +133,35 @@ export const VignettesPage = () => {
         </div>
       </section>
 
+      {/* Why Vignette */}
+      <section className="py-12 bg-[#F9F9F7]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-2xl font-bold text-[#2D4F1E] mb-6 flex items-center gap-3">
+            <Shield className="w-7 h-7 text-[#2D4F1E]" />
+            {c.titles.why}
+          </h2>
+          <div className="bg-white p-6 rounded-2xl shadow-lg">
+            <p className="text-gray-700 text-lg leading-relaxed">{c.whyText}</p>
+          </div>
+        </div>
+      </section>
+
       {/* Prices */}
-      <section className="py-16 bg-[#F9F9F7]">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl font-bold text-[#2D4F1E] mb-8 text-center">
-            {titles.prices}
+            {c.titles.prices}
           </h2>
           
           <div className="overflow-x-auto">
             <table className="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
               <thead className="bg-[#2D4F1E] text-white">
                 <tr>
-                  <th className="px-6 py-4 text-left font-semibold">{titles.category}</th>
-                  <th className="px-6 py-4 text-center font-semibold">{titles.day}</th>
-                  <th className="px-6 py-4 text-center font-semibold">{titles.week}</th>
-                  <th className="px-6 py-4 text-center font-semibold">{titles.month}</th>
-                  <th className="px-6 py-4 text-center font-semibold">{titles.year}</th>
+                  <th className="px-6 py-4 text-left font-semibold">{c.titles.category}</th>
+                  <th className="px-6 py-4 text-center font-semibold">{c.titles.day}</th>
+                  <th className="px-6 py-4 text-center font-semibold">{c.titles.week}</th>
+                  <th className="px-6 py-4 text-center font-semibold">{c.titles.month}</th>
+                  <th className="px-6 py-4 text-center font-semibold">{c.titles.year}</th>
                 </tr>
               </thead>
               <tbody>
@@ -108,15 +180,54 @@ export const VignettesPage = () => {
         </div>
       </section>
 
-      {/* Where to Purchase - Information Only */}
-      <section className="py-16 bg-white">
+      {/* Fines */}
+      <section className="py-16 bg-[#9D2235]/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-2xl font-bold text-[#9D2235] mb-8 flex items-center gap-3">
+            <AlertCircle className="w-7 h-7" />
+            {c.titles.fines}
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {c.finesList.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-[#9D2235]"
+              >
+                <div className="text-3xl font-display font-bold text-[#9D2235] mb-2">{item.fine}</div>
+                <p className="text-gray-700">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Roads Info */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-2xl font-bold text-[#2D4F1E] mb-6 flex items-center gap-3">
+            <Route className="w-7 h-7 text-[#2D4F1E]" />
+            {c.titles.roads}
+          </h2>
+          <div className="bg-[#2D4F1E]/5 p-6 rounded-2xl border border-[#2D4F1E]/20">
+            <p className="text-gray-700 text-lg leading-relaxed">{c.roadsInfo}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Where to Purchase */}
+      <section className="py-16 bg-[#F9F9F7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl font-bold text-[#2D4F1E] mb-8 text-center">
-            {titles.where}
+            {c.titles.where}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {locations.map((location, index) => {
+            {c.locations.map((location, index) => {
               const Icon = location.icon;
               return (
                 <motion.div
@@ -125,7 +236,7 @@ export const VignettesPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-[#F9F9F7] p-6 rounded-2xl"
+                  className="bg-white p-6 rounded-2xl shadow-lg"
                 >
                   <div className="w-12 h-12 bg-[#2D4F1E] rounded-xl flex items-center justify-center mb-4">
                     <Icon className="w-6 h-6 text-[#EBA937]" />
@@ -134,6 +245,12 @@ export const VignettesPage = () => {
                 </motion.div>
               );
             })}
+          </div>
+
+          {/* Note */}
+          <div className="mt-8 bg-white p-6 rounded-2xl shadow-lg flex items-start gap-4">
+            <CheckCircle className="w-6 h-6 text-[#2D4F1E] flex-shrink-0 mt-1" />
+            <p className="text-gray-700">{c.note}</p>
           </div>
         </div>
       </section>
