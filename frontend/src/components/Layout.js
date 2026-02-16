@@ -322,6 +322,12 @@ export const Layout = ({ children }) => {
               © 2025 {getSiteName()}. {language === 'ru' ? 'Информационный ресурс.' : language === 'lv' ? 'Informatīvs resurss.' : 'Information resource.'}
             </p>
             <div className="flex items-center gap-6 text-sm">
+              <Link to="/privacy" className="text-white/50 hover:text-white transition-colors">
+                {language === 'ru' ? 'Конфиденциальность' : language === 'lv' ? 'Privātums' : 'Privacy'}
+              </Link>
+              <Link to="/terms" className="text-white/50 hover:text-white transition-colors">
+                {language === 'ru' ? 'Условия' : language === 'lv' ? 'Noteikumi' : 'Terms'}
+              </Link>
               <Link to="/about" className="text-white/50 hover:text-white transition-colors">{t.nav.about}</Link>
               <Link to="/contacts" className="text-white/50 hover:text-white transition-colors">{t.nav.contacts}</Link>
             </div>
