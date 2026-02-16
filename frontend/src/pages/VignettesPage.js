@@ -28,7 +28,7 @@ export const VignettesPage = () => {
       ],
       roadsInfo: 'Vinjete obligāta uz visiem A klases autoceļiem (automaģistrālēm) Latvijā. Tas ietver galvenos tranzīta koridorus: Via Baltica (A1, A7), Rīga-Maskava (A6), Rīga-Liepāja (A9), Rīga-Ventspils (A10).',
       locations: [
-        { icon: Globe, text: 'Tiešsaistē portālā latviasvinjete.lv' },
+        { icon: Globe, text: 'Tiešsaistē (oficiālajā portālā)' },
         { icon: Fuel, text: 'Circle K, Neste, Viada degvielas uzpildes stacijās' },
         { icon: MapPin, text: 'Robežpunktos' },
         { icon: Smartphone, text: 'Mobilajā lietotnē' }
@@ -56,7 +56,7 @@ export const VignettesPage = () => {
       ],
       roadsInfo: 'Vignette is mandatory on all A-class roads (highways) in Latvia. This includes main transit corridors: Via Baltica (A1, A7), Riga-Moscow (A6), Riga-Liepaja (A9), Riga-Ventspils (A10).',
       locations: [
-        { icon: Globe, text: 'Online at latviasvinjete.lv' },
+        { icon: Globe, text: 'Online (official portal)' },
         { icon: Fuel, text: 'At Circle K, Neste, Viada gas stations' },
         { icon: MapPin, text: 'At border crossings' },
         { icon: Smartphone, text: 'Via mobile app' }
@@ -84,7 +84,7 @@ export const VignettesPage = () => {
       ],
       roadsInfo: 'Виньетка обязательна на всех дорогах класса A (автомагистралях) Латвии. Это включает основные транзитные коридоры: Via Baltica (A1, A7), Рига-Москва (A6), Рига-Лиепая (A9), Рига-Вентспилс (A10).',
       locations: [
-        { icon: Globe, text: 'Онлайн на сайте latviasvinjete.lv' },
+        { icon: Globe, text: 'Онлайн (официальный портал)' },
         { icon: Fuel, text: 'На заправках Circle K, Neste, Viada' },
         { icon: MapPin, text: 'На пограничных пунктах' },
         { icon: Smartphone, text: 'Через мобильное приложение' }
