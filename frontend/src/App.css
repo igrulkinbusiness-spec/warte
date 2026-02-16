@@ -12,6 +12,21 @@
 /* Leaflet Fixes */
 .leaflet-container {
     font-family: 'Manrope', sans-serif;
+    z-index: 1 !important;
+}
+
+.leaflet-pane,
+.leaflet-tile-pane,
+.leaflet-overlay-pane,
+.leaflet-shadow-pane,
+.leaflet-marker-pane,
+.leaflet-tooltip-pane,
+.leaflet-popup-pane {
+    z-index: 1 !important;
+}
+
+.leaflet-control {
+    z-index: 2 !important;
 }
 
 .leaflet-popup-content-wrapper {
