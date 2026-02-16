@@ -23,13 +23,6 @@ const quickLinks = [
   { path: '/borders', icon: MapPin, label: 'borders', color: '#9D2235' },
 ];
 
-const features = [
-  { icon: CreditCard, title: 'Виньетки', desc: 'Тарифы и где купить', path: '/vignettes' },
-  { icon: ParkingCircle, title: 'Стоянки', desc: 'Охраняемые паркинги', path: '/parking' },
-  { icon: Scale, title: 'Габариты', desc: 'Весовые ограничения', path: '/weights' },
-  { icon: Clock, title: 'Режим отдыха', desc: 'Требования ЕС', path: '/rest' },
-];
-
 export const HomePage = () => {
   const { t, language } = useLanguage();
 
