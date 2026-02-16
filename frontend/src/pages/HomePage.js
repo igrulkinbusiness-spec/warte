@@ -159,12 +159,18 @@ export const HomePage = () => {
             viewport={{ once: true }}
             className="font-display text-3xl md:text-4xl font-bold text-[#2D4F1E] text-center mb-12"
           >
-            {language === 'ru' ? 'Полезная информация' : language === 'lv' ? 'Noderīga informācija' : 'Useful Information'}
+            {t.features.title}
           </motion.h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => {
+            {[
+              { icon: CreditCard, key: 'vignettes', path: '/vignettes' },
+              { icon: ParkingCircle, key: 'parking', path: '/parking' },
+              { icon: Scale, key: 'weights', path: '/weights' },
+              { icon: Clock, key: 'rest', path: '/rest' },
+            ].map((feature, index) => {
               const Icon = feature.icon;
+              const featureData = t.features[feature.key];
               return (
                 <motion.div
                   key={index}
@@ -180,8 +186,8 @@ export const HomePage = () => {
                     <div className="w-12 h-12 bg-[#EBA937]/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#EBA937] transition-colors">
                       <Icon className="w-6 h-6 text-[#EBA937] group-hover:text-[#2D4F1E] transition-colors" />
                     </div>
-                    <h3 className="font-display text-lg font-bold text-[#2D4F1E] mb-2">{feature.title}</h3>
-                    <p className="text-gray-600 text-sm">{feature.desc}</p>
+                    <h3 className="font-display text-lg font-bold text-[#2D4F1E] mb-2">{featureData.title}</h3>
+                    <p className="text-gray-600 text-sm">{featureData.desc}</p>
                   </Link>
                 </motion.div>
               );
@@ -196,20 +202,20 @@ export const HomePage = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-center md:text-left">
               <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">
-                {language === 'ru' ? 'Экстренная помощь' : language === 'lv' ? 'Ārkārtas palīdzība' : 'Emergency Help'}
+                {t.emergency.title}
               </h2>
               <p className="text-white/80">
-                {language === 'ru' ? 'Круглосуточно' : language === 'lv' ? 'Diennakts' : '24/7'}
+                {t.emergency.subtitle}
               </p>
             </div>
             <div className="flex flex-wrap gap-4 justify-center">
               <div className="bg-white/10 backdrop-blur px-6 py-4 rounded-xl text-center">
                 <div className="text-3xl font-display font-bold text-white">112</div>
-                <div className="text-white/80 text-sm">{language === 'ru' ? 'Экстренные' : language === 'lv' ? 'Ārkārtas' : 'Emergency'}</div>
+                <div className="text-white/80 text-sm">{t.emergency.services}</div>
               </div>
               <div className="bg-white/10 backdrop-blur px-6 py-4 rounded-xl text-center">
                 <div className="text-3xl font-display font-bold text-white">110</div>
-                <div className="text-white/80 text-sm">{language === 'ru' ? 'Полиция' : language === 'lv' ? 'Policija' : 'Police'}</div>
+                <div className="text-white/80 text-sm">{t.emergency.police}</div>
               </div>
               <Link to="/contacts">
                 <Button className="bg-white text-[#9D2235] hover:bg-white/90 rounded-full px-6 py-4 h-auto">
