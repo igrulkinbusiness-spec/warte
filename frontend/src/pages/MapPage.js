@@ -147,7 +147,7 @@ export const MapPage = () => {
           </div>
 
           {/* Map Container */}
-          <div className="w-full h-[600px] rounded-3xl shadow-2xl border-4 border-white overflow-hidden" data-testid="map-container">
+          <div className="w-full h-[600px] rounded-3xl shadow-2xl border-4 border-white overflow-hidden relative z-0" data-testid="map-container">
             {mapReady && (
               <MapContainer
                 center={[56.8796, 24.6032]}
